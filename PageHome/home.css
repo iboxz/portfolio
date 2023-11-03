@@ -469,6 +469,8 @@ body {
 .designerDiv:hover::before {
   height: 80%;
   width: 80%;
+
+  background-color: #f24d2c;
   background-image: var(
     --before-bg-image,
     url("../images/DIGITAL_DESIGNER.png")
