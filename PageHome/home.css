@@ -99,6 +99,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #0e0e0e;
+  pointer-events: none;
 }
 /* @media only screen and (max-width: 768px) {
   .mainSec {
@@ -110,10 +111,12 @@ body {
   position: absolute;
   top: 0%;
   width: 100%;
-  object-fit: cover;
   background-color: #0e0e0e;
 
-  opacity: 0.35;
+  pointer-events: all;
+
+  /* opacity: 0.65; */
+  /* object-fit: cover; */
 }
 
 #header {
@@ -141,6 +144,7 @@ body {
 #header > p {
   padding: 5vw;
   position: relative;
+  pointer-events: all;
 }
 #headerAboutMe:before {
   content: "";
@@ -261,7 +265,7 @@ body {
 
   font-family: "Manrope", Arial, sans-serif;
   font-weight: 900;
-  font-size: clamp(8rem, 30vw, 35rem);
+  font-size: clamp(8rem, 30vw, 18rem);
   letter-spacing: -2px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -280,66 +284,19 @@ body {
   padding: 0 1vw;
 }
 
-#ibox {
-  color: transparent;
-  background: radial-gradient(
-      circle farthest-corner at top left,
-      #efff78 0%,
-      rgba(225, 243, 97, 0) 50%
-    ),
-    radial-gradient(
-      circle farthest-side at top right,
-      #b5b0b1 0%,
-      rgba(181, 176, 177, 0) 10%
-    ),
-    radial-gradient(
-      circle farthest-corner at bottom right,
-      #71f78e 0%,
-      rgba(204, 104, 119, 0) 33%
-    ),
-    radial-gradient(
-      circle farthest-corner at top right,
-      #b8e6f3 0%,
-      rgba(155, 221, 240, 0) 50%
-    ),
-    radial-gradient(
-      ellipse at bottom center,
-      #9644aa 0%,
-      rgba(254, 43, 0, 0) 80%
-    );
-  background-size: 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: flickerI 3s alternate infinite;
-  position: relative;
-}
-
-#ibox::after {
-  content: "IBOX";
-  position: absolute;
-  left: 3%;
-  top: 0%;
-  color: white;
-  z-index: -1;
-  /* box-shadow: 0px 0px 200px 17vw rgb(255, 255, 255); */
-}
-
-#this,
-#is {
-  /* animation: flickerLG 3s alternate infinite; */
-  position: relative;
-}
-@keyframes flickerI {
-  0% {
-    background-size: 100%;
-    background-position: 0 0;
+@media only screen and (min-width: 768px) {
+  #mainText {
+    justify-content: left;
+    align-items: inherit;
+    flex-wrap: wrap;
+    font-size: 15vw;
   }
-  100% {
-    background-size: 205%;
-    background-position: 100% 100%;
+  #ibox {
+    width: 100%;
+    font-size: 30vw;
+    margin-top: -10vh;
   }
 }
-
 /*----------------------------------------------------*/
 .SecendSection {
   margin-top: -20vh;
@@ -465,7 +422,6 @@ body {
   transition: all 0.2s linear;
 }
 .designerDiv:hover::before {
-
   height: 80%;
   width: 80%;
   background-image: var(

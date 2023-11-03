@@ -1,3 +1,8 @@
+window.onload = function () {
+  var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
+  shadowRoot.querySelector("#logo").remove();
+};
+// -------------------------------------------
 const elts = {
   text1: document.getElementById("changeableText1"),
   text2: document.getElementById("changeableText2"),
@@ -116,11 +121,11 @@ let classNames = [
   "#ProjectsBoxy",
 ];
 
-classNames.forEach((className) => {
+classNames.forEach(className => {
   let cursortracking = document.querySelector(className);
 
   if (cursortracking) {
-    cursortracking.addEventListener("mousemove", (e) => {
+    cursortracking.addEventListener("mousemove", e => {
       let rect = e.target.getBoundingClientRect();
       let x = e.clientX - rect.left;
       let y = e.clientY - rect.top;
@@ -253,13 +258,13 @@ animateElement("#TextIM");
 gsap.from("#SecProjects", {
   scrollTrigger: {
     trigger: "#SecProjects",
-    start: "-80% bottom",
+    start: "-90% bottom",
     toggleActions: "play none none none",
     // markers: true,
   },
   y: "100%",
   filter: "blur(10px)",
-  duration: 2,
+  duration: 1.5,
 });
 
 gsap.from(".section4", {
@@ -272,4 +277,14 @@ gsap.from(".section4", {
     scrub: 2,
   },
   yPercent: "-150",
+});
+gsap.to(".headerVid", {
+  scrollTrigger: {
+    trigger: ".headerVid",
+    start: "bottom top",
+    end: "bottom center",
+    toggleActions: "play none none reset",
+  },
+  opacity: 0,
+  display: "none",
 });
