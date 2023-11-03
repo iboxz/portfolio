@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iliya</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="src/section2.css" />
+    <link rel="stylesheet" href="src/section3.css" />
+    <link rel="stylesheet" href="src/section4.css" />
+    <link rel="stylesheet" href="srcMiniGame/style.css" />
+    <link rel="stylesheet" href="src/splash.css" />
+    <link rel="stylesheet" href="srcHorizontalScroll/index.css" />
+    <link rel="stylesheet" href="src/mouse.css" />
+  </head>
+  <body>
+    <main>
+      <div id="cursor"></div>
+      <div id="cursor-border"></div>
+      <!-- <svg id="mySVG" viewBox="0 0 932 1699" fill="none">
+        <path
+          id="triangle"
+          d="M10.5 10C17.3333 85.3333 72 312.8 250 372C407 424.216 701.513 363.579 874 616.5C970.5 758 896 951.5 856.5 999.5C809 1060.83 666.4 1188 476 1206C238 1228.5 66 1328.5 40 1485.5C30.7163 1541.56 52 1637 117.5 1688.5"
+          stroke="black"
+          stroke-width="20"
+          stroke-miterlimit="10.4714"
+          stroke-linecap="round"
+        />
+      </svg> -->
+
+      <section>
+        <div>
+          <div class="objects">
+            <div class="loading">
+              <div class="counter">
+                <div class="numbers">
+                  <div>000</div>
+                  <div>5</div>
+                  <div>7</div>
+                  <div>36</div>
+                  <div>44</div>
+                  <div>55</div>
+                  <div>66</div>
+                  <div>77</div>
+                  <div>88</div>
+                  <div>100</div>
+                </div>
+              </div>
+            </div>
+            <div class="blob-9"></div>
+          </div>
+          <div class="full-water">
+            <div class="water">
+              <div class="splash splash--1">Hola!</div>
+              <div class="TopHeader">
+                <div class="textHolderTopHeader">
+                  <p data-scroll-speed="2">This is</p>
+                  <div id="IboxTextSpan">
+                    <span data-scroll-speed="2">I</span>
+                    <span data-scroll-speed="3">B</span>
+                    <span data-scroll-speed="4">O</span>
+                    <span data-scroll-speed="5">X</span>
+                  </div>
+                  <p data-scroll-speed="6">, Who!?</p>
+                </div>
+                <img
+                  class="moving-cat"
+                  src="../images/smilling-cat-header.png"
+                  alt="smilling cat"
+                />
+                <div id="ParticlesCursor"></div>
+                <!-- <img data-scroll-speed="5" src="../images/DustOriginal.png" alt="Orange dust" /> -->
+
+                <div class="mouse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section2">
+        <div class="ag-format-container">
+          <div class="ag-courses_box">
+            <div class="ag-courses_item">
+              <a class="ag-courses-item_link">
+                <div class="ag-courses-item_bg"></div>
+
+                <div class="ag-courses-item_title">Hello, world!</div>
+                <div class="ag-courses-item_date-box">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod
+                  ad enim inventore magnam repellat, veritatis corporis commodi
+                  placeat saepe deserunt culpa magni, quasi temporibus eveniet
+                  voluptates. Et hic, quia blanditiis magnam modi obcaecati.
+                  <span class="ag-courses-item_date">
+                    iliya hadinezhad (it’s me)
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="LSD-mode">
+            <img
+              data-cursor="pointer2"
+              data-scroll-speed="-10"
+              id="metal1"
+              src="../images/ArtBackground-Header1.png"
+              alt="Metal drops"
+            />
+            <img
+              data-cursor="pointer2"
+              data-scroll-speed="-8"
+              id="metal2"
+              src="../images/ArtBackground-Header2.png"
+              alt="Metal drops"
+            />
+            <img
+              data-cursor="pointer2"
+              data-scroll-speed="-6"
+              id="metal3"
+              src="../images/ArtBackground-Header3.png"
+              alt="Metal drops"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="section4">
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://instagram.com/firstibox"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-instagram"></i><span>i</span><span>n</span
+          ><span>s</span><span>t</span><span>a</span><span>g</span><span>r</span
+          ><span>a</span><span>m</span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://x.com/FirstIBOX"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-twitter-x"></i><span>t</span><span>w</span
+          ><span>i</span><span>t</span><span>t</span><span>e</span
+          ><span>r</span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://t.me/FirstIBOX"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-telegram"></i><span>t</span><span>e</span
+          ><span>l</span><span>e</span><span>g</span><span>r</span><span>a</span
+          ><span>m</span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://discord.com/users/655082737220452352"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-discord"></i><span>d</span><span>i</span><span>s</span
+          ><span>c</span><span>o</span><span>r</span><span>d</span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.snapchat.com/add/firstibox"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-snapchat"></i><span>s</span><span>n</span
+          ><span>a</span><span>p</span><span>c</span><span>h</span><span>a</span
+          ><span>t</span>
+        </a>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://www.linkedin.com/in/iliyahadinezhad/"
+          id="section4Texts"
+          data-cursor="pointer2"
+        >
+          <i class="bi bi-linkedin"></i><span>l</span><span>i</span
+          ><span>n</span><span>k</span><span>e</span><span>d</span><span>i</span
+          ><span>n</span>
+        </a>
+      </div>
+      <!-- section3 -->
+      <section class="maxContentSection">
+        <div class="section3" data-cursor="pointer">
+          <img
+            id="imgCity"
+            src="images/B-W-city.png"
+            alt="A black and white city gif"
+          />
+          <div id="AgeInfoDiv">
+            <p id="ageText">My age:</p>
+            <div id="ageInYears"></div>
+            <div id="ageInSeconds"></div>
+          </div>
+          <img
+            id="imgSkelete"
+            src="images/skelete.gif"
+            alt="A black and white skeleton playing the violin"
+          />
+        </div>
+      </section>
+
+      <div class="header2Flasher">
+        <img src="../images/LSD_1.png" alt="On drug effect" />
+        <img src="../images/LSD_2.png" alt="On drug effect two" />
+      </div>
+      <section data-cursor="pointer2">
+        <div class="container2">
+          <p class="spotifyMusicCoverP Skew-Scrolling">My music taste</p>
+          <div includeHTML="src/spotifyMusicCover.html"></div>
+        </div>
+      </section>
+
+      <div class="scroll-slider">
+        <div class="scroll-wrapper">
+          <article class="scroll-slide">
+            <span class="span-scrollSection">
+              <div class="musicTaste" data-cursor="pointer2">
+                <p>My Top Genres</p>
+                <table class="musicGenrestable">
+                  <tr>
+                    <td>1 / persian hip hop</td>
+                    <td>4 / pop</td>
+                  </tr>
+                  <tr>
+                    <td>2 / rap</td>
+                    <td>5 / classic pop</td>
+                  </tr>
+                  <tr>
+                    <td>3 / persian alternative</td>
+                    <td>6 / rock</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="musicTaste" data-cursor="pointer2">
+                <p>My Top Artists</p>
+                <table class="musicGenrestable">
+                  <tr>
+                    <td>&bull;&nbsp;Ali&nbsp;Sorena</td>
+                    <td>&bull;&nbsp;Mehrad&nbsp;Hidden</td>
+                    <td>&bull;&nbsp;Fadaei­</td>
+                  </tr>
+                  <tr>
+                    <td>&bull;&nbsp;Hiphopologist</td>
+                    <td>&bull;&nbsp;Eminem</td>
+                    <td>&bull;&nbsp;Logic</td>
+                  </tr>
+                  <tr>
+                    <td>&bull;&nbsp;NF</td>
+                  </tr>
+                  <tr>
+                    <td colspan="3">
+                      &bull;&nbsp;And most of the Persian 90s pop artists
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </span>
+          </article>
+          <article class="item scroll-slide">
+            <div class="spotifyFrameP">
+              <p>Some of my weekly picks:</p>
+              <div id="circle">
+                <svg viewBox="0 0 300 300" data-cursor="pointer2">
+                  <defs>
+                    <path
+                      id="circlePath"
+                      d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+                    />
+                  </defs>
+                  <g>
+                    <text fill="#000">
+                      <textPath xlink:href="#circlePath">
+                        If the music isn't displayed for you, turn on VPN
+                        &#9135;&#9135;&#9135;&#9135;&#9135;&#9135;&#9135;&#9135;
+                      </textPath>
+                    </text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </article>
+          <article class="item scroll-slide">
+            <span class="spotifyFrame">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/6ab4rf3InrldCTEzBaYG6d?utm_source=generator&theme=0"
+                frameborder="0"
+                allowfullscreen="allow"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe
+              ><iframe
+                src="https://open.spotify.com/embed/track/2IbCWcSQenm0aKKrBtjUCg?utm_source=generator"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe
+              ><iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/27iOveNtXH7mYdJSD2w4nS?utm_source=generator"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </span>
+          </article>
+          <article class="item scroll-slide">
+            <span class="spotifyFrame">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/2ZHTJHBHeojTonlOtrnVSc?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/2cTGGLpBuPZLytyoLCjgoX?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/track/3Y3dfANdwPcVruRp2HQNLy?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </span>
+          </article>
+          <article class="item scroll-slide">
+            <span class="spotifyFramewide">
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1E35cIz1E6JpOO?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </span>
+          </article>
+        </div>
+        <div id="scrolling_text">
+          <div id="textScrolling">
+            <span
+              >&nbsp;I know some people don't like my music taste but I don't
+              care, cry about that, lol!</span
+            >
+          </div>
+          <div id="textScrolling">
+            <span
+              >&nbsp;I know some people don't like my music taste but I don't
+              care, cry about that, lol!</span
+            >
+          </div>
+        </div>
+      </div>
+      <section data-cursor="pointer">
+        <div id="container">
+          <div id="game"></div>
+          <div id="score">0</div>
+          <div id="instructions">
+            Click (or press the spacebar) to place the block
+          </div>
+          <div class="game-over">
+            <h2>Game Over</h2>
+            <p>You did great.</p>
+            <p>Click to start again</p>
+          </div>
+          <div class="game-ready">
+            <div id="start-button">Start</div>
+            <div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js"></script>
+
+    
+    <script src="app.js"></script>
+    <script src="src/js/cursor.js"></script>
+    <script src="srcHorizontalScroll/script.js"></script>
+    <script src="srcMiniGame/script.js"></script>
+    <script type="module" src="src/js/ParticlesCursor.js"></script>
+  </body>
+</html>

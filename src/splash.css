@@ -1,0 +1,981 @@
+/************************
+ * Animations infinites *
+ ************************/
+/*
+ * Number Trembling
+ */
+.tremble {
+  -webkit-animation: tremble 0.1s infinite;
+  animation: tremble 0.1s infinite;
+}
+
+@-webkit-keyframes tremble {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 5px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes tremble {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 5px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+/*
+ * Objects
+ */
+.object {
+  border: 2px solid #000000;
+  position: absolute;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.diamond {
+  transform: rotate(45deg);
+}
+
+.circle:nth-child(1),
+.square:nth-child(1),
+.diamond:nth-child(1) {
+  height: 42px;
+  left: 14%;
+  width: 42px;
+}
+
+.object:nth-child(1) {
+  -webkit-animation-duration: 950ms;
+  animation-duration: 950ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--1;
+  animation-name: flyUp--1;
+  opacity: 0.08;
+}
+
+@-webkit-keyframes flyUp--1 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--1 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(2),
+.square:nth-child(2),
+.diamond:nth-child(2) {
+  height: 10px;
+  left: 59%;
+  width: 10px;
+}
+
+.object:nth-child(2) {
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--2;
+  animation-name: flyUp--2;
+  opacity: 0.16;
+}
+
+@-webkit-keyframes flyUp--2 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--2 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(3),
+.square:nth-child(3),
+.diamond:nth-child(3) {
+  height: 42px;
+  left: 16%;
+  width: 42px;
+}
+
+.object:nth-child(3) {
+  -webkit-animation-duration: 850ms;
+  animation-duration: 850ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--3;
+  animation-name: flyUp--3;
+  opacity: 0.24;
+}
+
+@-webkit-keyframes flyUp--3 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--3 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(4),
+.square:nth-child(4),
+.diamond:nth-child(4) {
+  background-color: #000000;
+  height: 27px;
+  left: 25%;
+  width: 27px;
+}
+
+.object:nth-child(4) {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--4;
+  animation-name: flyUp--4;
+  opacity: 0.32;
+}
+
+@-webkit-keyframes flyUp--4 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--4 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(5),
+.square:nth-child(5),
+.diamond:nth-child(5) {
+  height: 48px;
+  left: 14%;
+  width: 48px;
+}
+
+.object:nth-child(5) {
+  -webkit-animation-duration: 750ms;
+  animation-duration: 750ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--5;
+  animation-name: flyUp--5;
+  opacity: 0.4;
+}
+
+@-webkit-keyframes flyUp--5 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--5 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(6),
+.square:nth-child(6),
+.diamond:nth-child(6) {
+  background-color: #000000;
+  height: 42px;
+  left: 21%;
+  width: 42px;
+}
+
+.object:nth-child(6) {
+  -webkit-animation-duration: 700ms;
+  animation-duration: 700ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--6;
+  animation-name: flyUp--6;
+  opacity: 0.48;
+}
+
+@-webkit-keyframes flyUp--6 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--6 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(7),
+.square:nth-child(7),
+.diamond:nth-child(7) {
+  height: 65px;
+  left: 63%;
+  width: 65px;
+}
+
+.object:nth-child(7) {
+  -webkit-animation-duration: 650ms;
+  animation-duration: 650ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--7;
+  animation-name: flyUp--7;
+  opacity: 0.56;
+}
+
+@-webkit-keyframes flyUp--7 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--7 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(8),
+.square:nth-child(8),
+.diamond:nth-child(8) {
+  height: 31px;
+  left: 16%;
+  width: 31px;
+}
+
+.object:nth-child(8) {
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--8;
+  animation-name: flyUp--8;
+  opacity: 0.64;
+}
+
+@-webkit-keyframes flyUp--8 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--8 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(9),
+.square:nth-child(9),
+.diamond:nth-child(9) {
+  height: 28px;
+  left: 9%;
+  width: 28px;
+}
+
+.object:nth-child(9) {
+  -webkit-animation-duration: 550ms;
+  animation-duration: 550ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--9;
+  animation-name: flyUp--9;
+  opacity: 0.72;
+}
+
+@-webkit-keyframes flyUp--9 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--9 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(10),
+.square:nth-child(10),
+.diamond:nth-child(10) {
+  height: 6px;
+  left: 54%;
+  width: 6px;
+}
+
+.object:nth-child(10) {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--10;
+  animation-name: flyUp--10;
+  opacity: 0.8;
+}
+
+@-webkit-keyframes flyUp--10 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--10 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(11),
+.square:nth-child(11),
+.diamond:nth-child(11) {
+  height: 61px;
+  left: 38%;
+  width: 61px;
+}
+
+.object:nth-child(11) {
+  -webkit-animation-duration: 450ms;
+  animation-duration: 450ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--11;
+  animation-name: flyUp--11;
+  opacity: 0.88;
+}
+
+@-webkit-keyframes flyUp--11 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--11 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(12),
+.square:nth-child(12),
+.diamond:nth-child(12) {
+  background-color: #000000;
+  height: 37px;
+  left: 48%;
+  width: 37px;
+}
+
+.object:nth-child(12) {
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--12;
+  animation-name: flyUp--12;
+  opacity: 0.96;
+}
+
+@-webkit-keyframes flyUp--12 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--12 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(13),
+.square:nth-child(13),
+.diamond:nth-child(13) {
+  height: 90px;
+  left: 38%;
+  width: 90px;
+}
+
+.object:nth-child(13) {
+  -webkit-animation-duration: 350ms;
+  animation-duration: 350ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--13;
+  animation-name: flyUp--13;
+  opacity: 1.04;
+}
+
+@-webkit-keyframes flyUp--13 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--13 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(14),
+.square:nth-child(14),
+.diamond:nth-child(14) {
+  background-color: #000000;
+  height: 30px;
+  left: 23%;
+  width: 30px;
+}
+
+.object:nth-child(14) {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--14;
+  animation-name: flyUp--14;
+  opacity: 1.12;
+}
+
+@-webkit-keyframes flyUp--14 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--14 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+.circle:nth-child(15),
+.square:nth-child(15),
+.diamond:nth-child(15) {
+  height: 87px;
+  left: 28%;
+  width: 87px;
+}
+
+.object:nth-child(15) {
+  -webkit-animation-duration: 250ms;
+  animation-duration: 250ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 6;
+  animation-iteration-count: 6;
+  -webkit-animation-name: flyUp--15;
+  animation-name: flyUp--15;
+  opacity: 1.2;
+}
+
+@-webkit-keyframes flyUp--15 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+@keyframes flyUp--15 {
+  0% {
+    bottom: -10%;
+  }
+  100% {
+    bottom: 120%;
+  }
+}
+
+/*
+ * ~~ 3 
+ * Water & Wobble
+ * start: 4sec, dur: 2sec
+ */
+.water {
+  -webkit-animation: rising 1.5s 4s both;
+  animation: rising 1.5s 4s both;
+  background-color: #000000;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@-webkit-keyframes rising {
+  0% {
+    bottom: -200%;
+  }
+  100% {
+    bottom: -80%;
+  }
+}
+
+@keyframes rising {
+  0% {
+    bottom: -200%;
+  }
+  100% {
+    bottom: -80%;
+  }
+}
+
+/*
+ * ~~ 4
+ * Splash & Wobble/Trampoline
+ * start: 5.3sec, dur: ~1sec
+ */
+/*-------------- loading shits------------------------------------------ */
+.loading {
+  background-color: #000000;
+  position: absolute;
+  -webkit-animation-delay: 4.5s;
+  animation-delay: 4.5s;
+  -webkit-animation-duration: 3.4s;
+  animation-duration: 3.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: loading;
+  animation-name: loading;
+  height: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #f1efe9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -40%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -40%;
+  }
+}
+.counter {
+  width: 100px;
+  scale: 3;
+  font: 100 40px "Pilowlava";
+  overflow: hidden;
+}
+
+.numbers {
+  width: auto;
+  display: flex;
+  animation: countNumber 5s linear alternate;
+  animation-timing-function: steps(10);
+}
+
+.numbers div {
+  text-align: center;
+  flex: 0 0 100px;
+}
+
+@keyframes countNumber {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+.blob-9 {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin: 2vw;
+  width: 80px;
+  aspect-ratio: 1;
+  border: 10px solid #f1efe9;
+  background: radial-gradient(farthest-side, #000 98%, #f1efe9) top,
+    radial-gradient(farthest-side, #000 98%, #f1efe9) top,
+    radial-gradient(farthest-side, #000 98%, #f1efe9) left,
+    radial-gradient(farthest-side, #000 98%, #f1efe9) right,
+    radial-gradient(farthest-side, #000 98%, #f1efe9) bottom, #f1efe9;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  scale: 1;
+  animation: b9 2s infinite, b9secend 7s normal;
+}
+@media only screen and (max-width: 768px) {
+  .blob-9 {
+    scale: 0.6;
+    margin: 1vw;
+  }
+}
+@keyframes b9secend {
+  99% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@keyframes b9 {
+  0% {
+    background-position: top, top, left, right, bottom;
+  }
+  25% {
+    background-position: right, top, left, right, bottom;
+  }
+  50% {
+    background-position: bottom, top, left, right, bottom;
+  }
+  75% {
+    background-position: left, top, left, right, bottom;
+  }
+  100% {
+    background-position: top, top, left, right, bottom;
+  }
+}
+
+.splash {
+  border: #000000 1px solid;
+  position: absolute;
+}
+
+.wobble {
+  margin-top: -40px;
+  position: absolute;
+  width: 100vw;
+}
+
+#trampoline {
+  fill: #00ffba;
+}
+
+.splash--1 {
+  -webkit-animation-delay: 5.3s;
+  animation-delay: 5.3s;
+  -webkit-animation-duration: 1.4333333333s;
+  animation-duration: 1.4333333333s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: splash--1;
+  animation-name: splash--1;
+  height: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  font-family: "Pilowlava";
+  font-size: clamp(4rem, 10vw, 12rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes splash--1 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -40%;
+  }
+}
+
+@keyframes splash--1 {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -40%;
+  }
+}
+
+/*
+ * ~~ 5
+ * Water Fullrise
+ * start: 6.5sec, dur: 1sec
+ */
+.full-water {
+  -webkit-animation: fullRising 1s 6.5s both;
+  animation: fullRising 1s 6.5s both;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@-webkit-keyframes fullRising {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 80%;
+  }
+}
+
+@keyframes fullRising {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 80%;
+  }
+}
+/*
+ * Finishing up
+ */
+#replay {
+  -webkit-animation: appear 1s 8s both;
+  animation: appear 1s 8s both;
+  bottom: 10px;
+  left: 45%;
+  position: absolute;
+  top: 48%;
+  z-index: 999;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 10px;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 10px;
+  }
+}
+
+#ParticlesCursor {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  filter: brightness(70%);
+  -webkit-mask-image: linear-gradient(black, transparent);
+  mask-image: linear-gradient (black, transparent);
+}
+#ParticlesCursor canvas {
+  z-index: -1;
+  top: 0;
+}
+.TopHeader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 110vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.TopHeader > img:nth-child(2) {
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  z-index: 2;
+  object-fit: contain;
+  object-position: 50% 100%;
+}
+.TopHeader > img:nth-child(3) {
+  pointer-events: none;
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+  animation: filter 5s infinite alternate;
+}
+
+@keyframes filter {
+  from {
+    filter: invert(1);
+  }
+
+  to {
+    filter: invert(0);
+  }
+}
+.textHolderTopHeader {
+  pointer-events: none;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+
+@media (max-width: 993px) {
+  .textHolderTopHeader {
+    flex-direction: column;
+  }
+  .TopHeader {
+    align-items: center;
+  }
+}
+.textHolderTopHeader > p:nth-child(1) {
+  font-family: "Franchise";
+  font-size: clamp(0.5rem, 20vw, 3rem);
+  margin-left: 20px;
+  margin-top: 5vh;
+}
+#IboxTextSpan {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  pointer-events: none;
+}
+#IboxTextSpan > span {
+  font-family: "Franchise";
+  font-size: clamp(15rem, 60vw, 40rem);
+  line-height: 0.8;
+  text-align: center;
+  transition: 0.2s ease;
+}
+.textHolderTopHeader > p:nth-child(3) {
+  font-family: "Franchise";
+  font-size: clamp(0.3rem, 20vw, 3rem);
+  align-self: self-end;
+  margin-right: 20px;
+}
