@@ -458,8 +458,6 @@ body {
   position: absolute;
   left: var(--x);
   top: var(--y);
-  height: 80%;
-  width: 80%;
   pointer-events: none;
   opacity: 0;
 
@@ -467,13 +465,12 @@ body {
   transition: all 0.2s linear;
 }
 .designerDiv:hover::before {
+
   height: 80%;
   width: 80%;
-
-  background-color: #f24d2c;
   background-image: var(
     --before-bg-image,
-    url("../images/DIGITAL_DESIGNER.png")
+    url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER.png?v=1699026292552")
   ); /* تعریف تصویر پس‌زمینه اولیه */
   background-size: contain;
   background-repeat: no-repeat;
