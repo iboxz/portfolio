@@ -52,7 +52,7 @@ body {
   background-color: white;
   border-radius: 50%;
   pointer-events: none;
-  
+
   transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
     height 0.15s ease-out, background-color 0.15s ease-out;
 
@@ -292,16 +292,18 @@ body {
 
 @media only screen and (min-width: 768px) {
   #mainText {
-    justify-content: left;
+    display: none;
+    opacity: 0;
+    /*     justify-content: left;
     align-items: inherit;
     flex-wrap: wrap;
-    font-size: 15vw;
+    font-size: 15vw; */
   }
-  #ibox {
+  /*   #ibox {
     width: 100%;
     font-size: 30vw;
     margin-top: -10vh;
-  }
+  } */
 }
 /*----------------------------------------------------*/
 .SecendSection {
