@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+    }
+    html, body{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.493/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/JPUmRxnlkIBngSET/scene.splinecode">
+        <script>
+            window.onload = function () {
+                var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
+                shadowRoot.querySelector("#logo").remove();
+            };
+        </script>
+    </spline-viewer>
+
+</body>
+
+</html>

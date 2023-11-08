@@ -1,7 +1,63 @@
+// ---------------------------------------------------------------
+/* 
+function getCPURAMInfo() {
+  var ram = navigator.deviceMemory || "N/A";
+
+  return {
+    ram: ram,
+  };
+}
+
+var userInfo = getCPURAMInfo();
+console.log(userInfo.ram);
+ */
+
+function checkVRAMAndWebGLSupport() {
+  var gl = document.createElement("canvas").getContext("webgl");
+  var maxVRAM = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+
+  var webglSupport = gl ? true : false;
+
+  if (maxVRAM >= 1024 * 4 && webglSupport) {
+    function addSection() {
+      const mainSec = document.querySelector(".mainSec");
+
+      mainSec.innerHTML += `
+        <spline-viewer class="header3D" loading-anim
+            url="https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"></spline-viewer>
+      `;
+    }
+
+    addSection();
+    console.log("WebGL & 2GB Vram true true");
+  } else {
+    function addSection() {
+      const mainSec = document.querySelector(".mainSec");
+      mainSec.innerHTML += `
+    <video class="headerVid" width="100%" height="100%" poster="/images/hero-placeholder.webp" playsinline loop
+      autoplay muted>
+      Your browser does not support the video tag.
+      <source src="/images/home-hero.mp4" type="video/mp4" />
+      <source src="/images/home-hero.mp4" type="video/webm" />
+    </video>`;
+    }
+    addSection();
+
+    document.querySelector("#mainText").style.display = "flex";
+    document.querySelector("#mainText").style.opacity = 1;
+
+    console.log("WebGL & 2GB Vram true false");
+  }
+  console.log(maxVRAM, webglSupport);
+}
+checkVRAMAndWebGLSupport();
+//-----------------------------------------------
+
 window.onload = function () {
   var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
   shadowRoot.querySelector("#logo").remove();
 };
+
 // -------------------------------------------
 const elts = {
   text1: document.getElementById("changeableText1"),
@@ -99,18 +155,19 @@ function animate() {
 
 animate();
 
-/*فالو اپ دیو توسط موس ------------------------------------------------------ */
-function ChangeScale() {
+/* function ChangeScale() {
   var preloader = document.querySelector(".preloader");
 
   if (window.innerWidth > 768) {
-    kos = preloader.style.scale = 0.6;
+   preloader.style.scale = 0.6;
   } else {
-    kos = preloader.style.scale = window.innerWidth / 1500;
+   preloader.style.scale = window.innerWidth / 1500;
   }
 }
 window.addEventListener("load", ChangeScale);
 window.addEventListener("resize", ChangeScale);
+ */
+/*فالو اپ دیو توسط موس ------------------------------------------------------ */
 
 let classNames = [
   "#headerAboutMe",
@@ -156,37 +213,59 @@ document.querySelector(".designerDiv").addEventListener("click", function () {
   // افزایش شمارنده یا بازگشت به ابتدا اگر به انتها رسیده‌ایم
   counter = (counter + 1) % images.length;
 });
-
+//------------------------------------------------------------------------
 gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".header3D", {
+  scrollTrigger: {
+    trigger: ".header3D",
+    start: "bottom top",
+    end: "bottom center",
+    toggleActions: "play none none reset",
+  },
+  opacity: 0,
+  display: "none",
+});
+
+gsap.to("#mainText", {
+  scrollTrigger: {
+    trigger: "#mainText",
+    start: "top top",
+    end: "bottom center",
+    scrub: 1,
+  },
+  y: 100,
+});
+
+gsap.to(".mainSec", {
+  scrollTrigger: {
+    trigger: "#mainText",
+    start: "80% center",
+    end: "bottom center",
+    toggleActions: "play none none reverse",
+  },
+  filter: "blur(5px)",
+});
 
 function TextElement(element) {
   gsap.from(element, {
     scrollTrigger: {
       trigger: "#letsText",
       start: "center bottom",
-      toggleActions: "play none none reverse",
+      toggleActions: "play none none none",
     },
     skewY: 10,
     rotationX: 100,
     xPercent: "-10",
     yPercent: "30",
     duration: 1,
-    filter: "blur(10px)",
+    // filter: "blur(10px)",
   });
 }
 
 TextElement("#changeableTextRelative");
 TextElement("#letsText");
 
-gsap.to(".Circles", {
-  scrollTrigger: {
-    trigger: ".Circles",
-    start: "top bottom",
-    end: "300% center",
-    scrub: 5,
-  },
-  rotationY: -1200,
-});
 gsap.to("#RotateAsterisque", {
   scrollTrigger: {
     trigger: "#RotateAsterisque",
@@ -197,40 +276,11 @@ gsap.to("#RotateAsterisque", {
   // rotationZ: -360,
   skewX: -70,
 });
-
-gsap.to(".preloaderMain", {
-  scrollTrigger: {
-    trigger: ".preloaderMain",
-    start: "top center",
-    end: "bottom center",
-    scrub: 1,
-  },
-  y: 100,
-  opacity: 0,
-});
-gsap.to("#mainText", {
-  scrollTrigger: {
-    trigger: "#mainText",
-    start: "top top",
-    end: "bottom center",
-    scrub: 1,
-  },
-  y: 100,
-});
-gsap.to(".mainSec", {
-  scrollTrigger: {
-    trigger: "#mainText",
-    start: "80% center",
-    end: "bottom center",
-    toggleActions: "play none none reverse",
-  },
-  filter: "blur(5px)",
-});
 gsap.from(".IAmDivSecInside", {
   scrollTrigger: {
     trigger: ".IAmDivSecInside",
     start: "-60% bottom",
-    toggleActions: "play none none reverse",
+    toggleActions: "play none none none",
   },
   y: "100%",
   filter: "blur(10px)",
@@ -241,7 +291,7 @@ function animateElement(element) {
     scrollTrigger: {
       trigger: element,
       start: "top 90%",
-      toggleActions: "play none none reverse",
+      toggleActions: "play none none none",
     },
     y: "100%",
     duration: 0.6,
@@ -273,18 +323,8 @@ gsap.from(".section4", {
     start: "120% 90%",
     end: "190% 90%",
 
-    toggleActions: "play none none reverse",
-    scrub: 2,
+    toggleActions: "play none none none",
+    // scrub: 2,
   },
   yPercent: "-150",
-});
-gsap.to(".headerVid", {
-  scrollTrigger: {
-    trigger: ".headerVid",
-    start: "bottom top",
-    end: "bottom center",
-    toggleActions: "play none none reset",
-  },
-  opacity: 0,
-  display: "none",
 });

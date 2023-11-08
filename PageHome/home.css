@@ -43,6 +43,10 @@ body {
   width: 100%;
   /* overflow-x: hidden; */
 }
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 #cursor {
   position: fixed;
   top: -5px;
@@ -102,7 +106,6 @@ body {
   height: 120vh;
   width: 100%;
   position: relative;
-  background-color: #0e0e0e;
   pointer-events: none;
 }
 /* @media only screen and (max-width: 768px) {
@@ -111,6 +114,19 @@ body {
   }
 } */
 
+.header3D {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+
+  background-color: #0e0e0e;
+
+  pointer-events: all;
+
+  /* opacity: 0.65; */
+  /* object-fit: cover; */
+  z-index: 1;
+}
 .headerVid {
   position: absolute;
   top: 0%;
@@ -119,13 +135,11 @@ body {
 
   pointer-events: all;
 
-  /* opacity: 0.65; */
-  /* object-fit: cover; */
+  opacity: 0.65;
+  object-fit: cover;
 }
 
 #header {
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
 
   color: rgb(255, 255, 255);
@@ -142,8 +156,10 @@ body {
   text-transform: uppercase;
   font-family: "roboto";
   font-size: clamp(0.2rem, 5vw, 1.8rem);
+  color: white;
 
-  z-index: 5;
+  position: relative;
+  z-index: 10;
 }
 #header > p {
   padding: 5vw;
@@ -159,7 +175,6 @@ body {
   width: 0;
   background-color: #e1f361;
   color: #0e0e0e;
-  mix-blend-mode: exclusion;
   transform: translate(-50%, 30%);
   pointer-events: none;
   transition: all 200ms ease-out;
@@ -195,7 +210,6 @@ body {
   width: 0;
   background-color: #9bddf0;
   color: #0e0e0e;
-  mix-blend-mode: exclusion;
   transform: translate(-50%, 30%);
   pointer-events: none;
   transition: all 200ms ease-out;
@@ -231,7 +245,6 @@ body {
   width: 0;
   background-color: #f24d2c;
   color: #0e0e0e;
-  mix-blend-mode: exclusion;
   transform: translate(-50%, 30%);
   pointer-events: none;
   transition: all 200ms ease-out;
@@ -285,6 +298,8 @@ body {
   padding: 0 2vw;
 
   opacity: 1;
+  position: relative;
+  z-index: 10;
 }
 #mainText > span {
   padding: 0 1vw;
@@ -307,6 +322,8 @@ body {
 }
 /*----------------------------------------------------*/
 .SecendSection {
+  width: 100vw;
+  overflow: hidden;
   margin-top: -20vh;
   border-radius: 2em;
   background-color: #eae0d4;
@@ -320,7 +337,6 @@ body {
   z-index: 10;
 }
 #mainTextSec2 {
-  margin-top: -600px;
   position: relative;
   z-index: 12;
 
@@ -329,6 +345,7 @@ body {
 }
 
 #mainTextSecWorld {
+  padding-top: 10vh;
   overflow: hidden;
 }
 #mainTextSecWorld > p {
@@ -367,7 +384,6 @@ body {
 /*----------------------------------------------------*/
 
 #IAmDivSec {
-  overflow: hidden;
   color: #401714;
   display: flex;
   justify-content: center;
