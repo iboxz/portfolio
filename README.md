@@ -7,16 +7,9 @@ This is official website of IBOX (Iliya Hadinezhad):
 ## [firstibox.glitch.me](https://firstibox.glitch.me/)
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [Skills](#skills)
 - [Projects](#projects)
 - [Contact](#contact)
-
-## Introduction
-- **Name**: Iliya Hadinezhad
-- **About Me**: Digital designer, programmer, and generalist with diverse skills.
-- **Location**: Tehran, Iran
-- **Age**: 00 (Years Old)
 
 ## Skills
 
