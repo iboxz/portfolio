@@ -51,7 +51,7 @@
   scale: 1.02;
 }
 
-#ProjectsBoxy > a::before {
+/* #ProjectsBoxy > a::before {
   content: "";
 
   position: absolute;
@@ -75,12 +75,12 @@
   opacity: 0;
 
   transition: all 0s linear;
-}
-
+} */
+/* 
 #ProjectsBoxy > a:hover::before {
   opacity: 1;
   z-index: 1;
-}
+} */
 
 #cursorLink > img {
   width: 100%;
