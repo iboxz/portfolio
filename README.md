@@ -50,7 +50,6 @@ This is official website of IBOX (Iliya Hadinezhad):
 
 ## Projects
 - [Boxy Bot](https://boxy.boxypanel.repl.co/)
-  ![Boxy Bot Showcase](https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/projects-boxy.jpg?v=1699477157047)
 - More projects coming soon!
 
 ## Contact
