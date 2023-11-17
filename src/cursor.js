@@ -84,8 +84,13 @@ document.querySelectorAll("[data-cursor]").forEach(item => {
     cursorBorder.style.setProperty("--size", "50px");
     cursor.style.setProperty("--sizeMainCursor", "10px");
 
-    cursorBorder.style.display = "inline";
-    cursor.style.display = "inline";
+    if (window.innerWidth < 768) {
+      cursorBorder.style.display = "none";
+      cursor.style.display = "none";
+    } else {
+      cursorBorder.style.display = "inline";
+      cursor.style.display = "inline";
+    }
 
     cursor.style.animation = "unset";
     cursorBorder.style.animation = "unset";
