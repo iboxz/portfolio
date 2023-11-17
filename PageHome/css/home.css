@@ -1,32 +1,31 @@
 @font-face {
   font-family: "Manrope";
-  src: url("../fonts/Manrope.woff") format("woff");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Manrope.woff?v=1700238553223")
+    format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "openSans";
-  src: url("../fonts/openSans.woff2") format("woff2");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/openSans.woff2?v=1700238569976")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Brinley";
-  src: url("../fonts/Brinley.otf") format("opentype");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Brinley.otf?v=1700238586761")
+    format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GTWalsheimPro";
-  src: url("../fonts/GTWalsheimPro-CondensedBlack.woff") format("woff");
-  src: url("../fonts/GTWalsheimPro-CondensedBlack.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "roboto";
-  src: url("../fonts/roboto.woff2") format("woff2");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff?v=1700238603306")
+    format("woff");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff2?v=1700238601701")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -46,76 +45,6 @@ body {
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
-}
-#cursor {
-  --sizeMainCursor: 10px;
-  position: fixed;
-  top: calc(var(--sizeMainCursor) / -2);
-  left: calc(var(--sizeMainCursor) / -2);
-  width: var(--sizeMainCursor);
-  height: var(--sizeMainCursor);
-  background-color: white;
-  border-radius: 50%;
-  pointer-events: none;
-
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
-    height 0.15s ease-out, background-color 0.15s ease-out;
-
-  z-index: 999;
-}
-
-#cursor-border {
-  --size: 30px;
-  position: fixed;
-  top: calc(var(--size) / -2);
-  left: calc(var(--size) / -2);
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px white;
-  pointer-events: none;
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out,
-    height 0.15s ease-out, background-color 0.15s ease-out;
-  z-index: 999;
-}
-
-@keyframes blobRadius {
-  0%,
-  100% {
-    border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%;
-  }
-  20% {
-    border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
-  }
-  40% {
-    border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
-  }
-  60% {
-    border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
-  }
-  80% {
-    border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
-  }
-}
-
-@keyframes blobBackground {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #cursor,
-  #cursor-border {
-    display: none;
-  }
-  * {
-    cursor: auto;
-  }
 }
 
 .noise {
@@ -177,14 +106,19 @@ a {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
+  pointer-events: none;
 
   padding-top: 2vw;
   margin-bottom: 2vw;
   height: 12vh;
 
   text-transform: uppercase;
-  font-family: "roboto";
-  font-size: clamp(0.2rem, 5vw, 1.8rem);
+  font-family: "openSans", Arial, sans-serif;
+  font-weight: 500;
+
+  letter-spacing: 2px;
+  line-height: 1.3;
+  font-size: clamp(1rem, 1.5vw, 100rem);
   color: white;
 
   position: relative;
@@ -351,119 +285,150 @@ a {
 }
 /*----------------------------------------------------*/
 .SecendSection {
+  /* Box Model */
   width: 100%;
+  padding-bottom: 20px;
+
+  /* Box Model & Positioning */
   overflow: hidden;
   margin-top: -20vh;
   border-radius: 2em;
   background-color: #eae0d4;
-
-  padding-bottom: 20px;
-
-  box-shadow: 0px -50px 50px 0px rgba(0, 0, 0, 0.8),
-    0px 5px 50px 0px rgba(86, 86, 86, 0.8);
-
   position: relative;
   z-index: 10;
+
+  /* Box Shadow */
+  box-shadow: 0px -50px 50px 0px rgba(0, 0, 0, 0.8),
+    0px 5px 50px 0px rgba(86, 86, 86, 0.8);
 }
+
 #mainTextSec2 {
+  /* Box Model & Positioning */
   position: relative;
   z-index: 12;
-
-  color: #ff2f2f;
   padding: 2vw;
+
+  /* Display */
+  color: #ff2f2f;
 }
 
 #mainTextSecWorld {
-  padding-top: 10vh;
+  /* Box Model */
   overflow: hidden;
+  padding-top: 10vh;
 }
+
 #mainTextSecWorld > p {
+  /* Display */
   font-family: "openSans", Arial, sans-serif;
   font-size: clamp(1rem, 5vw, 2rem);
   line-height: 0.9;
   text-transform: uppercase;
   white-space: nowrap;
 }
+
 #mainTextIliya {
+  /* Box Model */
   display: flex;
   padding-left: 5vw;
 }
+
 #mainTextSecName {
+  /* Box Model */
   overflow: hidden;
 }
+
 #mainTextSecName > p {
+  /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
   font-size: clamp(5rem, 12vw, 20rem);
   line-height: 0.8;
   text-transform: uppercase;
 }
+
 #mainTextSecIM {
+  /* Box Model */
   overflow: hidden;
 }
+
 #mainTextSecIM > p {
+  /* Display */
   font-family: "Brinley", Arial, sans-serif;
   font-size: clamp(1.5rem, 10vw, 2rem);
   font-style: italic;
   white-space: nowrap;
   margin-top: 60px;
-
   padding-left: 1vw;
 }
 
 /*----------------------------------------------------*/
-
 #IAmDivSec {
+  /* Display */
   color: #401714;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
+  /* Positioning */
   position: relative;
   z-index: 13;
 }
+
 #IAmDivSec > div {
+  /* Box Model */
   height: 400px;
   width: 33%;
+  padding: 3vw;
+
+  /* Display */
   border-top: #222222 1px solid;
   border-bottom: #222222 1px solid;
-
   font-family: "openSans", Arial, sans-serif;
-
-  position: relative;
-
-  padding: 3vw;
   display: flex;
   flex-direction: column;
+
+  /* Positioning */
+  position: relative;
 }
+
 #IAmDivSec > div:nth-child(2) {
+  /* Display */
   border-right: #222222 1px solid;
   border-left: #222222 1px solid;
 }
+
 @media only screen and (max-width: 992px) {
   #IAmDivSec > div {
+    /* Box Model */
     width: 100%;
   }
 }
+
 .IAmDivSecInside > p:nth-child(1) {
+  /* Display */
   font-size: clamp(0.5rem, 10vw, 1.5rem);
   font-weight: 800;
   text-transform: uppercase;
   pointer-events: none;
 }
-.IAmDivSecInside > p:nth-child(2) {
-  color: #7c7c7c;
 
+.IAmDivSecInside > p:nth-child(2) {
+  /* Display */
+  color: #7c7c7c;
   font-size: clamp(0.4rem, 10vw, 0.9rem);
   text-transform: uppercase;
   pointer-events: none;
 }
+
 .IAmDivSecInside > div {
+  /* Display */
   font-size: clamp(0.3rem, 10vw, 0.8rem);
   margin-top: auto;
   pointer-events: none;
 }
 
 .designerDiv:before {
+  /* Positioning */
   content: "";
   position: absolute;
   left: var(--x);
@@ -471,115 +436,134 @@ a {
   pointer-events: none;
   opacity: 0;
 
+  /* Display */
   transform: translate(-50%, -50%);
 }
+
 .designerDiv:hover::before {
+  /* Display */
   height: 80%;
   width: 80%;
   background-image: var(
     --before-bg-image,
     url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER.png?v=1699026292552")
-  ); /* تعریف تصویر پس‌زمینه اولیه */
+  );
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 1;
 
+  /* Positioning */
   z-index: 1;
 }
+
 .programmerDiv:before {
+  /* Positioning */
   content: "";
   position: absolute;
   top: 0%;
   left: 0%;
   width: 80%;
   height: 80%;
-
   left: var(--x);
   top: var(--y);
   transform: translate(-50%, -50%);
-
   opacity: 0;
   pointer-events: none;
+
+  /* Display */
   background-color: #401714;
   color: #f9dcc5;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .programmerDiv:hover::before {
+  /* Display */
   content: "• HTML, CSS, JavaScript: 100% \a       - Tehran Technical Complex\a• Responsive Design: 100%\a       - Tehran Technical Complex\aUX/UI Design Principles: 80%\a       - Self taught\a• Android: 60%\a       - Allameh helli school\A• MongoDB & Node.js: 60%\a       - Discord bot developing";
   white-space: pre-wrap;
 
+  /* Positioning */
   opacity: 1;
   z-index: 1;
 }
 
 /*----------------------------------------------------*/
 #SecLetsText {
+  /* Positioning */
   overflow: hidden;
   position: relative;
+  z-index: 12;
 
+  /* Box Model */
   background-color: #ff2f2f;
   border-radius: 15px;
   margin: 10px 3vmin 0 3vmin;
 
+  /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
-
   color: #efe1d1;
   text-transform: uppercase;
   line-height: 0.8;
-
-  z-index: 12;
 }
-#SecLetsText::before {
-  content: "Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation";
 
+#SecLetsText::before {
+  /* Display */
+  content: "Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   color: #87180246;
   font-family: "openSans", Arial, sans-serif;
   font-weight: 600;
   font-size: clamp(1rem, 5vw, 2rem);
   line-height: 1.3;
-
   width: 120%;
   height: 90%;
   z-index: -1;
 }
+
 #SecLetsText > img {
+  /* Positioning */
   position: absolute;
   right: 5%;
   top: 5%;
-
   height: 30vmax;
   z-index: -1;
 
+  /* Transition */
   transition: all 0.2s linear;
 }
+
 #SecLetsText > p:nth-child(2) {
+  /* Positioning */
   position: relative;
 
+  /* Display */
   font-size: clamp(1rem, 5vw, 8rem);
-
   padding-top: 50px;
   padding-left: 5vw;
 }
-#SecLetsText > p:nth-child(3) {
-  position: relative;
-  font-size: clamp(5rem, 15vw, 18rem);
 
+#SecLetsText > p:nth-child(3) {
+  /* Positioning */
+  position: relative;
+
+  /* Display */
+  font-size: clamp(5rem, 15vw, 18rem);
   padding-left: 5vw;
 }
+
 #changeableTextRelative {
+  /* Positioning */
   position: relative;
   width: 100vw;
 }
+
 #changeableTextContainer {
+  /* Positioning */
   position: absolute;
   width: 80%;
   left: 10%;
@@ -589,10 +573,12 @@ a {
 
 #changeableText1,
 #changeableText2 {
+  /* Positioning */
   position: absolute;
   width: 100%;
   display: inline-block;
 
+  /* Display */
   font-size: clamp(3rem, 10vw, 10rem);
   text-transform: uppercase;
 }

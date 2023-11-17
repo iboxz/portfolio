@@ -5,11 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href="PageHome/home.css" />
-  <link rel="stylesheet" href="PageHome/cycle.text.css" />
-  <link rel="stylesheet" href="PageHome/cyclingCircles.css" />
-  <link rel="stylesheet" href="PageHome/projects.css" />
-  <link rel="stylesheet" href="PageContact/contact.css">
+  <link rel="stylesheet" href="PageHome/css/home.css" />
+  <link rel="stylesheet" href="PageHome/css/projects.css" />
+  <link rel="stylesheet" href="PageHome/css/contact.css" />
+  <link rel="stylesheet" href="src/cursor.css">
 </head>
 
 <body>
@@ -123,9 +122,9 @@
           <div id="SecProjectsText">
             <p id="ProjectsText">projects</p>
           </div>
-          <div id="ProjectsBoxy" data-cursor="pointerLink">
+          <div id="ProjectsBoxy">
             <a href="https://boxy.boxypanel.repl.co/" target="_blank">
-              <img
+              <img data-cursor="pointerLink"
                 src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/projects-boxy.jpg?v=1699477157047"
                 draggable="false" alt="boxy bot showcase" />
             </a>
@@ -186,8 +185,9 @@
           <a id="ContactTexts11" data-cursor="pointerLine" target="_blank"
             href="https://www.snapchat.com/add/thisisibox">SNAPCHAT</a>
         </div>
-        <div id="contactImage">
-          <img src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg?v=1700190239944" alt="" />
+        <div id="contactImage" data-cursor="pointerWaveBorder">
+          <img src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg?v=1700190239944"
+            alt="" />
         </div>
       </div>
       <a href="">
@@ -211,9 +211,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <script src="src/js/cursor.js"></script>
-  <script src="PageHome/home.js"></script>
-  <script src="PageContact/contact.js"></script>
+  <script src="PageHome/js/home.js"></script>
+  <script src="src/cursor.js"></script>
+  <script src="PageHome/js/changeableText.js"></script>
+  <script src="PageHome/js/contact.js"></script>
+  <script src="PageHome/js/gsap.js"></script>
 </body>
 
 </html>

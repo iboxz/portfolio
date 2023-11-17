@@ -1,91 +1,105 @@
-
 .contactSection {
+    /* Positioning */
     position: relative;
-
+  
+    /* Box Model */
     width: 100%;
-    position: relative;
-
+  
+    /* Display */
     color: #d4d4d4;
     overflow: hidden;
-}
-
-#contactImage {
+  }
+  
+  #contactImage {
+    /* Display */
     text-align: center;
-
-}
-
-#contactImage>img {
+  }
+  
+  #contactImage > img {
+    /* Box Model */
     height: 18vmax;
     object-fit: cover;
-}
-
-
-.contactSecTop {
+  }
+  
+  .contactSecTop {
+    /* Box Model */
     padding: 5vw;
-
+  
+    /* Display */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
-
-.contactSecTop>div {
+  }
+  
+  .contactSecTop > div {
+    /* Box Model */
     padding-top: 10px;
     width: 30%;
-}
-
-
-.contactSecLinks>p {
+  }
+  
+  .contactSecLinks > p {
+    /* Display */
     font-family: "GTWalsheimPro", Arial, sans-serif;
     text-transform: uppercase;
     padding-bottom: 15px;
-}
-
-.contactSecLinks>a {
+  }
+  
+  .contactSecLinks > a {
+    /* Display */
     font-family: "openSans", Arial, sans-serif;
-
     display: flex;
     flex-direction: column;
     text-decoration: none;
     color: #d4d4d4;
     font-size: 1rem;
     padding: 5px;
-}
-
-.contactSecLinks>a:hover {
+  }
+  
+  .contactSecLinks > a:hover {
+    /* Display */
     background-color: gray;
-}
-
-.MovingTextContainer {
+  }
+  
+  .MovingTextContainer {
+    /* Display */
     display: flex;
     align-items: center;
-}
-
-.MovingTextSingle {
+  }
+  
+  .MovingTextSingle {
+    /* Display */
     position: relative;
     white-space: nowrap;
     will-change: transform;
-}
-
-.MovingTexttext {
+  }
+  
+  .MovingTexttext {
+    /* Display */
     font-size: clamp(5rem, 9vw, 100rem);
     display: inline-block;
     font-family: 'Manrope', sans-serif;
-
-}
-
-.LinkToAboutMe{
+  }
+  
+  .LinkToAboutMe {
+    /* Display */
     font-family: "openSans", Arial, sans-serif;
     padding-left: 5vw;
-    
-}.LinkToAboutMe > span {
-    text-decoration: underline;
-}
-@media only screen and (max-width: 768px) {
-    #contactImage>img {
-        width: 100%;
-    }
-    .contactSecTop>div {
-        width: 100%;
-    }
-    
   }
+  
+  .LinkToAboutMe > span {
+    /* Display */
+    text-decoration: underline;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    #contactImage > img {
+      /* Box Model */
+      width: 100%;
+    }
+    
+    .contactSecTop > div {
+      /* Box Model */
+      width: 100%;
+    }
+  }
+  
