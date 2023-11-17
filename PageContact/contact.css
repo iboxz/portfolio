@@ -1,0 +1,91 @@
+
+.contactSection {
+    position: relative;
+
+    width: 100%;
+    position: relative;
+
+    color: #d4d4d4;
+    overflow: hidden;
+}
+
+#contactImage {
+    text-align: center;
+
+}
+
+#contactImage>img {
+    height: 18vmax;
+    object-fit: cover;
+}
+
+
+.contactSecTop {
+    padding: 5vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contactSecTop>div {
+    padding-top: 10px;
+    width: 30%;
+}
+
+
+.contactSecLinks>p {
+    font-family: "GTWalsheimPro", Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.contactSecLinks>a {
+    font-family: "openSans", Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #d4d4d4;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.contactSecLinks>a:hover {
+    background-color: gray;
+}
+
+.MovingTextContainer {
+    display: flex;
+    align-items: center;
+}
+
+.MovingTextSingle {
+    position: relative;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.MovingTexttext {
+    font-size: clamp(5rem, 9vw, 100rem);
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+.LinkToAboutMe{
+    font-family: "openSans", Arial, sans-serif;
+    padding-left: 5vw;
+    
+}.LinkToAboutMe > span {
+    text-decoration: underline;
+}
+@media only screen and (max-width: 768px) {
+    #contactImage>img {
+        width: 100%;
+    }
+    .contactSecTop>div {
+        width: 100%;
+    }
+    
+  }

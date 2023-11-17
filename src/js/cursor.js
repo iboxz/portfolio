@@ -1,4 +1,3 @@
-// تغییر افکت کرسر
 const cursor = document.querySelector("#cursor");
 const cursorBorder = document.querySelector("#cursor-border");
 const cursorPos = { x: 0, y: 0 };
@@ -7,67 +6,94 @@ const cursorBorderPos = { x: 0, y: 0 };
 document.addEventListener("mousemove", e => {
   cursorPos.x = e.clientX;
   cursorPos.y = e.clientY;
-
   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
 });
 
-requestAnimationFrame(function loop() {
-  const easting = 8;
+const easting = 8;
+
+function loop() {
   cursorBorderPos.x += (cursorPos.x - cursorBorderPos.x) / easting;
   cursorBorderPos.y += (cursorPos.y - cursorBorderPos.y) / easting;
-
   cursorBorder.style.transform = `translate(${cursorBorderPos.x}px, ${cursorBorderPos.y}px)`;
   requestAnimationFrame(loop);
-});
+}
+
+requestAnimationFrame(loop);
 
 document.querySelectorAll("[data-cursor]").forEach(item => {
   item.addEventListener("mouseover", e => {
-    if (item.dataset.cursor === "pointer") {
-      cursorBorder.style.backgroundColor = "rgba(255, 255, 255, .6)";
-      cursorBorder.style.setProperty("--size", "30px");
-    }
-    //-------------
-    else if (item.dataset.cursor === "pointer2") {
-      cursorBorder.style.backgroundColor = "white";
-      cursorBorder.style.mixBlendMode = "difference";
-      cursorBorder.style.setProperty("--size", "80px");
-    }
-    //-------------
-    else if (item.dataset.cursor === "pointer3") {
-      cursorBorder.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
-      cursorBorder.style.setProperty("--size", "30px");
-    }
-    //-------------
-    else if (item.dataset.cursor === "pointerDisable") {
-      cursorBorder.style.zIndex = "-999";
-      cursor.style.zIndex = "-999";
-    }
-    //-------------
-    else if (item.dataset.cursor === "pointerNoOutLine") {
-      cursorBorder.style.boxShadow = "none";
+    switch (item.dataset.cursor) {
+      case "pointer3":
+        cursorBorder.style.display = "none";
+        cursor.style.setProperty("--sizeMainCursor", "5px");
+        cursor.style.backgroundColor = "black";
+        break;
+      case "pointerDisable":
+        cursorBorder.style.display = "none";
+        cursor.style.display = "none";
+        break;
+      case "pointerBlendMode":
+        cursorBorder.style.backgroundColor = "white";
+        cursorBorder.style.mixBlendMode = "difference";
+        cursorBorder.style.setProperty("--size", "80px");
+        break;
+      case "pointerLink":
+        cursorBorder.style.display = "none";
 
-      cursor.style.width = "20px";
-      cursor.style.height = "20px";
-      cursor.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-    }
-    //-------------
-    else if (item.dataset.cursor === "pointerNoOutLineBlendMode") {
-      cursorBorder.style.backgroundColor = "white";
-      cursorBorder.style.mixBlendMode = "difference";
-      cursorBorder.style.setProperty("--size", "80px");
+        cursor.style.setProperty("--sizeMainCursor", "120px");
+        cursor.style.backgroundImage =
+          "url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/arrow-up-right-black.svg?v=1700189666557)";
+        cursor.style.backgroundRepeat = "no-repeat";
+        cursor.style.backgroundSize = "40px 40px";
+        cursor.style.backgroundPosition = "40px 40px";
+
+        break;
+      case "pointerWaveBorder":
+        cursorBorder.style.display = "none";
+
+        cursor.style.setProperty("--sizeMainCursor", "120px");
+        cursor.style.background =
+          "linear-gradient(120deg, #ffffff, #000000, #ffffff, #000000, #ffffff)";
+        cursor.style.animation =
+          "blobRadius 5s ease infinite, blobBackground 15s ease infinite";
+        cursor.style.backgroundSize = " 1600% 1600%";
+        cursor.style.mixBlendMode = "difference";
+
+        break;
+      case "pointerLine":
+        cursorBorder.style.animation = "blobRadius 5s ease infinite";
+        cursor.style.setProperty("--sizeMainCursor", "30px");
+        cursor.style.backgroundImage =
+          "url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/arrow-up-right-white.svg?v=1700189665777)";
+        cursor.style.backgroundRepeat = "no-repeat";
+        cursor.style.backgroundSize = "30px 30px";
+        cursor.style.backgroundColor = "unset";
+
+        break;
     }
   });
+
   item.addEventListener("mouseout", e => {
     cursorBorder.style.boxShadow = "0 0 0 1px white";
+
+    cursor.style.backgroundImage = "unset";
+
     cursorBorder.style.backgroundColor = "unset";
     cursorBorder.style.mixBlendMode = "unset";
-    cursorBorder.style.setProperty("--size", "50px");
-    cursorBorder.style.zIndex = "999";
-    cursor.style.zIndex = "999";
 
-    cursor.style.width = "10px";
-    cursor.style.height = "10px";
+    cursorBorder.style.setProperty("--size", "50px");
+    cursor.style.setProperty("--sizeMainCursor", "10px");
+
+    cursorBorder.style.display = "inline";
+    cursor.style.display = "inline";
+
+    cursor.style.animation = "unset";
+    cursorBorder.style.animation = "unset";
+
     cursor.style.backgroundColor = "white";
     cursor.style.mixBlendMode = "unset";
+
+    cursor.style.width = "var(--sizeMainCursor)";
+    cursor.style.borderRadius = "50%";
   });
 });

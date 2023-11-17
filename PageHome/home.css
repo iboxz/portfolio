@@ -38,7 +38,7 @@
   cursor: none;
 }
 body {
-  background-color: #0e0e0e;
+  background-color: black;
   transition: 1s ease;
   width: 100%;
   /* overflow-x: hidden; */
@@ -48,11 +48,12 @@ a {
   text-decoration: inherit; /* no underline */
 }
 #cursor {
+  --sizeMainCursor: 10px;
   position: fixed;
-  top: -5px;
-  left: -5px;
-  width: 10px;
-  height: 10px;
+  top: calc(var(--sizeMainCursor) / -2);
+  left: calc(var(--sizeMainCursor) / -2);
+  width: var(--sizeMainCursor);
+  height: var(--sizeMainCursor);
   background-color: white;
   border-radius: 50%;
   pointer-events: none;
@@ -78,6 +79,35 @@ a {
   z-index: 999;
 }
 
+@keyframes blobRadius {
+  0%,
+  100% {
+    border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%;
+  }
+  20% {
+    border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%;
+  }
+  40% {
+    border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%;
+  }
+  60% {
+    border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%;
+  }
+  80% {
+    border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%;
+  }
+}
+
+@keyframes blobBackground {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   #cursor,
   #cursor-border {
@@ -89,7 +119,7 @@ a {
 }
 
 .noise {
-  background-image: url(https://static.tildacdn.com/tild3265-3261-4333-a361-353739633737/noise.gif);
+  background-image: url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/noise.gif?v=1700189459043);
   background-size: 70px;
   opacity: 0.15;
   height: 110vh;
@@ -106,7 +136,6 @@ a {
   height: 120vh;
   width: 100%;
   position: relative;
-  pointer-events: none;
 }
 /* @media only screen and (max-width: 768px) {
   .mainSec {
@@ -133,7 +162,7 @@ a {
   width: 100%;
   background-color: #0e0e0e;
 
-  pointer-events: all;
+  pointer-events: none;
 
   opacity: 0.65;
   object-fit: cover;
@@ -322,7 +351,7 @@ a {
 }
 /*----------------------------------------------------*/
 .SecendSection {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   margin-top: -20vh;
   border-radius: 2em;
@@ -443,7 +472,6 @@ a {
   opacity: 0;
 
   transform: translate(-50%, -50%);
-  transition: all 0.2s linear;
 }
 .designerDiv:hover::before {
   height: 80%;
@@ -479,8 +507,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transition: all 0.2s linear;
 }
 .programmerDiv:hover::before {
   content: "• HTML, CSS, JavaScript: 100% \a       - Tehran Technical Complex\a• Responsive Design: 100%\a       - Tehran Technical Complex\aUX/UI Design Principles: 80%\a       - Self taught\a• Android: 60%\a       - Allameh helli school\A• MongoDB & Node.js: 60%\a       - Discord bot developing";
@@ -569,47 +595,4 @@ a {
 
   font-size: clamp(3rem, 10vw, 10rem);
   text-transform: uppercase;
-}
-/*=-----------------------------*/
-.section4 {
-  overflow: hidden;
-
-  height: fit-content;
-  margin-top: -10vh;
-  padding-top: 11vh;
-
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  background-color: #0e0e0e;
-  /* background-image: url(../images);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover; */
-
-  position: relative;
-  z-index: 1;
-}
-#section4Texts {
-  height: fit-content;
-  text-align: left;
-  color: rgb(255, 255, 255);
-  font-family: "Manrope";
-  font-size: clamp(2rem, 6vw, 2.5rem);
-  text-decoration: none;
-
-  text-transform: uppercase;
-  text-shadow: -2px 4px 4px #292929;
-
-  white-space: nowrap;
-  letter-spacing: -0.01em;
-
-  margin: 1vh 1.5vw;
-  transition: 0.2s ease;
-  z-index: 20;
-}
-#section4Texts:hover {
-  scale: 1.1;
 }

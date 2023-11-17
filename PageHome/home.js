@@ -1,3 +1,24 @@
+const birthDate = "2005-02-01T01:10:05";
+
+const today = new Date();
+
+const birthTimeInMillis = new Date(birthDate).getTime();
+const todayTimeInMillis = today.getTime();
+
+const ageInYears = Math.floor(
+  (todayTimeInMillis - birthTimeInMillis) / (1000 * 60 * 60 * 24 * 365.25)
+);
+
+const ageElement = document.querySelector("#MyAge");
+ageElement.innerHTML = `${ageInYears}YearsOld&#160;&#8231;&#160;`;
+
+// --------------------------------------------------------------
+function CopyEmail() {
+  navigator.clipboard.writeText("hadinezhad1383@gmail.com");
+
+  const Copyemail = document.getElementById("Copyemail");
+  Copyemail.textContent = "hadinezhad1383@gmail.com (copied)";
+}
 // ---------------------------------------------------------------
 /* 
 function getCPURAMInfo() {
@@ -18,17 +39,28 @@ function checkVRAMAndWebGLSupport() {
 
   var webglSupport = gl ? true : false;
 
-  if (maxVRAM >= 1024 * 4 && webglSupport) {
+  if (maxVRAM >= 1024 * 8 && webglSupport) {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
 
-      mainSec.innerHTML += `
-        <spline-viewer class="header3D" loading-anim
-            url="https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"></spline-viewer>
-      `;
+      const splineViewer = document.createElement("spline-viewer");
+      splineViewer.setAttribute("class", "header3D");
+      splineViewer.setAttribute("spinner-big-dark", true);
+      splineViewer.setAttribute(
+        "url",
+        "https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"
+      );
+
+      mainSec.appendChild(splineViewer);
     }
 
     addSection();
+
+    window.onload = function () {
+      var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
+      shadowRoot.querySelector("#logo").remove();
+    };
+
     console.log("WebGL & 2GB Vram true true");
   } else {
     function addSection() {
@@ -52,11 +84,6 @@ function checkVRAMAndWebGLSupport() {
 }
 checkVRAMAndWebGLSupport();
 //-----------------------------------------------
-
-window.onload = function () {
-  var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
-  shadowRoot.querySelector("#logo").remove();
-};
 
 // -------------------------------------------
 const elts = {
@@ -175,7 +202,6 @@ let classNames = [
   "#headerContact",
   ".designerDiv",
   ".programmerDiv",
-  "#ProjectsBoxy",
 ];
 
 classNames.forEach(className => {
@@ -193,12 +219,12 @@ classNames.forEach(className => {
 });
 /* تغییر عکس های بیفور با هر بار کلیک---------------------------------------------------------*/
 const images = [
-  "../images/DIGITAL_DESIGNER2.png",
-  "../images/DIGITAL_DESIGNER3.png",
-  "../images/DIGITAL_DESIGNER4.png",
-  "../images/DIGITAL_DESIGNER5.png",
-  "../images/DIGITAL_DESIGNER6.png",
-  "../images/DIGITAL_DESIGNER.png",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER2.png?v=1700189774008",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER3.png?v=1700189768874",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER4.png?v=1700189770241",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER5.png?v=1700189771518",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER6.png?v=1700189772639",
+  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER.png?v=1699026292552",
 ];
 
 let counter = 0;
@@ -317,14 +343,27 @@ gsap.from("#SecProjects", {
   duration: 1.5,
 });
 
-gsap.from(".section4", {
-  scrollTrigger: {
-    trigger: ".section4",
-    start: "120% 90%",
-    end: "190% 90%",
+function ContactElementAnimation(element) {
+  gsap.from(element, {
+    scrollTrigger: {
+      trigger: element,
+      start: "center bottom",
+      end: "center 80%",
+      toggleActions: "play none none none",
+      scrub: 2,
+    },
+    x: "-150",
+  });
+}
 
-    toggleActions: "play none none none",
-    // scrub: 2,
-  },
-  yPercent: "-150",
-});
+ContactElementAnimation("#ContactTexts1");
+ContactElementAnimation("#Copyemail");
+ContactElementAnimation("#ContactTexts3");
+ContactElementAnimation("#ContactTexts4");
+ContactElementAnimation("#ContactTexts5");
+ContactElementAnimation("#ContactTexts6");
+ContactElementAnimation("#ContactTexts7");
+ContactElementAnimation("#ContactTexts8");
+ContactElementAnimation("#ContactTexts9");
+ContactElementAnimation("#ContactTexts10");
+ContactElementAnimation("#ContactTexts11");
