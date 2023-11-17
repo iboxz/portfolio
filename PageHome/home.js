@@ -72,8 +72,8 @@ function checkVRAMAndWebGLSupport() {
       <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/mp4" />
       <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/webm" />
     </video>`;
-    }
-    addSection();
+    } 
+    addSection( );
 
     document.querySelector("#mainText").style.display = "flex";
     document.querySelector("#mainText").style.opacity = 1;
