@@ -70,4 +70,4 @@ Check to see the full content
   - [Discord Server](https://discord.gg/alshain-748914550082109541)
   - [Snapchat](https://www.snapchat.com/add/thisisibox)
 
-[Click here to learn more about me](#)
+[Click here to learn more about me](https://firstibox.glitch.me/)
