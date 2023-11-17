@@ -1,14 +1,12 @@
-
 # [This is IBOX](https://firstibox.glitch.me/)
 
-![IBOX Logo](https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png?v=1700242730809)
-
-This is official website of IBOX (Iliya Hadinezhad): 
-# [firstibox.glitch.me](https://firstibox.glitch.me/) 
-- Check to see the full content
-
+This is official website of IBOX (Iliya Hadinezhad):
+Check to see the full content 
+> # [firstibox.glitch.me](https://firstibox.glitch.me/)
+![IBOX Logo](https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/005d8d9f-8659-4e4e-9665-6e5694843d4f.image.png?v=1700248322154)
 
 ## Table of Contents
+
 - [Skills](#skills)
 - [Projects](#projects)
 - [Contact](#contact)
@@ -16,6 +14,7 @@ This is official website of IBOX (Iliya Hadinezhad):
 ## Skills
 
 ### Digital Designer
+
 - User Interface/User Experience Design
 - Visual Design
 - Typography
@@ -25,6 +24,7 @@ This is official website of IBOX (Iliya Hadinezhad):
 - Knowledge of Design Trends and Industry Standards
 
 ### Programmer
+
 - HTML, CSS, JavaScript
 - Responsive Design
 - UX/UI Design Principles
@@ -35,6 +35,7 @@ This is official website of IBOX (Iliya Hadinezhad):
 - Node.js
 
 ### Generalist
+
 - **Photography:**
   - Camera Operation
   - Photo Editing and Retouching
@@ -51,10 +52,12 @@ This is official website of IBOX (Iliya Hadinezhad):
   - Podcasting and Audio Editing
 
 ## Projects
+
 - [Boxy Bot](https://boxy.boxypanel.repl.co/)
 - More projects coming soon!
 
 ## Contact
+
 - **Direct Communication:**
   - Email: [hadinezhad1383@gmail.com](mailto:hadinezhad1383@gmail.com)
   - [LinkedIn](https://www.linkedin.com/in/iliyahadinezhad/)
