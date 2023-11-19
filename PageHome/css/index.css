@@ -42,7 +42,9 @@ html {
   transition: 1s ease;
   scroll-behavior: smooth;
   width: 100%;
-  /* overflow-x: hidden; */
+}
+body {
+  overflow: hidden;
 }
 a {
   color: inherit; /* blue colors for links too */
@@ -62,6 +64,40 @@ a {
   pointer-events: none;
 }
 
+/*----------------------------------------------------*/
+.loadingSection {
+  /* Positioning */
+  position: absolute;
+  z-index: 990;
+
+  /* Display */
+  width: 100%;
+  height: 100vh;
+  background-color: #0c0c0c;
+
+  opacity: 1;
+
+  /* Transition */
+  transition: all 0.2s linear;
+
+  pointer-events: none;
+}
+.loadingSection > p {
+  /* Positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  /* Display */
+  color: #efe1d1;
+  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-size: clamp(3rem, 5vw, 100rem);
+  font-style: italic;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/*----------------------------------------------------*/
 .mainSec {
   overflow: hidden;
   height: 120vh;
@@ -77,7 +113,6 @@ a {
 .header3D {
   position: absolute;
   top: 0%;
-  width: 100%;
 
   background-color: #0e0e0e;
 
@@ -148,7 +183,7 @@ a {
 }
 #headerAboutMe:hover:before {
   content: "Do you want to know me better?";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerAboutMe::after {
@@ -183,7 +218,7 @@ a {
 }
 #headerBlog:hover::before {
   content: "Some interesting things, games and puzzles!";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerBlog::after {
@@ -218,7 +253,7 @@ a {
 }
 #headerContact:hover::before {
   content: "instagram, twitter, linkedin, telegram, etc.";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerContact::after {
@@ -294,7 +329,7 @@ a {
   /* Box Model & Positioning */
   overflow: hidden;
   margin-top: -20vh;
-  border-radius: 2em;
+  border-radius: 2vmax;
   background-color: #eae0d4;
   position: relative;
   z-index: 10;
@@ -323,7 +358,7 @@ a {
 #mainTextSecWorld > p {
   /* Display */
   font-family: "openSans", Arial, sans-serif;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 100rem);
   line-height: 0.9;
   text-transform: uppercase;
   white-space: nowrap;
@@ -343,7 +378,7 @@ a {
 #mainTextSecName > p {
   /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
-  font-size: clamp(5rem, 12vw, 20rem);
+  font-size: clamp(5rem, 12vw, 100rem);
   line-height: 0.8;
   text-transform: uppercase;
 }
@@ -356,7 +391,7 @@ a {
 #mainTextSecIM > p {
   /* Display */
   font-family: "Brinley", Arial, sans-serif;
-  font-size: clamp(1.5rem, 10vw, 2rem);
+  font-size: clamp(2rem, 2vw, 100rem);
   font-style: italic;
   white-space: nowrap;
   margin-top: 60px;
@@ -378,7 +413,8 @@ a {
 
 #IAmDivSec > div {
   /* Box Model */
-  height: 400px;
+  height: 25vmax;
+  min-height: 400px;
   width: 33%;
   padding: 3vw;
 
@@ -408,7 +444,7 @@ a {
 
 .IAmDivSecInside > p:nth-child(1) {
   /* Display */
-  font-size: clamp(0.5rem, 10vw, 1.5rem);
+  font-size: clamp(1.5rem, 1vw, 100rem);
   font-weight: 800;
   text-transform: uppercase;
   pointer-events: none;
@@ -417,14 +453,14 @@ a {
 .IAmDivSecInside > p:nth-child(2) {
   /* Display */
   color: #7c7c7c;
-  font-size: clamp(0.4rem, 10vw, 0.9rem);
+  font-size: clamp(1rem, 0.8vw, 100rem);
   text-transform: uppercase;
   pointer-events: none;
 }
 
 .IAmDivSecInside > div {
   /* Display */
-  font-size: clamp(0.3rem, 10vw, 0.8rem);
+  font-size: clamp(0.8rem, 0.8vw, 100rem);
   margin-top: auto;
   pointer-events: none;
 }
@@ -483,12 +519,127 @@ a {
 
 .programmerDiv:hover::before {
   /* Display */
-  content: "• HTML, CSS, JavaScript: 100% \a       - Tehran Technical Complex\a• Responsive Design: 100%\a       - Tehran Technical Complex\aUX/UI Design Principles: 80%\a       - Self taught\a• Android: 60%\a       - Allameh helli school\A• MongoDB & Node.js: 60%\a       - Discord bot developing";
+  content: "• HTML, CSS, JavaScript: 100% \a• Responsive Design: 100%\a• UX/UI Design Principles: 70%\a• Android: 50%\A• MongoDB & Node.js: 50%";
   white-space: pre-wrap;
+  font-size: clamp(0.8rem, 0.9vw, 100rem);
 
   /* Positioning */
   opacity: 1;
   z-index: 1;
+}
+
+/*----------------------------------------------------*/
+#SecProjectsAnimation {
+  /* Positioning */
+  position: relative;
+  z-index: 12;
+  overflow: hidden;
+}
+
+#SecProjects {
+  /* Box Model */
+  width: auto;
+  box-sizing: border-box;
+  border-radius: 1vmax;
+  margin: 60px 3vmin 0 3vmin;
+
+  /* Parent Layout */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  /* Display */
+  background-color: #0c0c0c;
+  color: #efe1d1;
+}
+
+#SecProjectsText {
+  /* Box Model */
+  width: 100%;
+  padding: 5vw 5vw 0 5vw;
+
+  /* Display */
+  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-size: clamp(1.5rem, 2vw, 100rem);
+  font-style: italic;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+#ProjectsBoxy {
+  /* Positioning */
+  position: relative;
+  margin: 1vw 1vw 3vw 1vw;
+}
+
+#ProjectsBoxy > a > img {
+  /* Box Model */
+  width: 35vmax;
+  height: auto;
+
+  border-radius: 1vmax;
+
+  /* Display */
+  object-fit: cover;
+  transition: 0.2s ease;
+  user-select: none;
+}
+
+#ProjectsBoxy > a > img:hover {
+  /* Box Model */
+  border-radius: 0;
+  filter: brightness(0.7);
+  scale: 1.02;
+}
+
+#ProjectsSoon {
+  /* Positioning */
+  overflow: hidden;
+  padding: 0 1vw 3vw 1vw;
+  position: relative;
+}
+
+#ProjectsSoon > img {
+  /* Box Model */
+  width: 35vmax;
+  border-radius: 1vmax;
+
+  /* Display */
+  object-fit: cover;
+  filter: blur(8px) hue-rotate(180deg);
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #SecProjects {
+    /* Parent Layout */
+    flex-direction: row;
+  }
+  #ProjectsBoxy > a > img {
+    /* Box Model */
+    width: 100%;
+  }
+  #ProjectsSoon > img {
+    /* Box Model */
+    width: 100%;
+  }
+}
+
+#ProjectsSoon > p {
+  /* Positioning */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Display */
+  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 100rem);
+  font-style: italic;
+  line-height: 0.8;
+  text-transform: uppercase;
 }
 
 /*----------------------------------------------------*/
@@ -497,11 +648,12 @@ a {
   overflow: hidden;
   position: relative;
   z-index: 12;
+  height: 27vmax;
 
   /* Box Model */
   background-color: #ff2f2f;
-  border-radius: 15px;
-  margin: 10px 3vmin 0 3vmin;
+  border-radius: 1vmax;
+  margin: 2vmin 3vmin 0 3vmin;
 
   /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
@@ -520,7 +672,7 @@ a {
   color: #87180246;
   font-family: "openSans", Arial, sans-serif;
   font-weight: 600;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 100rem);
   line-height: 1.3;
   width: 120%;
   height: 90%;
@@ -544,8 +696,8 @@ a {
   position: relative;
 
   /* Display */
-  font-size: clamp(1rem, 5vw, 8rem);
-  padding-top: 50px;
+  font-size: clamp(1rem, 5vw, 100rem);
+  padding-top: 3vmax;
   padding-left: 5vw;
 }
 
@@ -554,7 +706,7 @@ a {
   position: relative;
 
   /* Display */
-  font-size: clamp(5rem, 15vw, 18rem);
+  font-size: clamp(5rem, 12vw, 100rem);
   padding-left: 5vw;
 }
 
@@ -581,6 +733,113 @@ a {
   display: inline-block;
 
   /* Display */
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3rem, 10vw, 100rem);
   text-transform: uppercase;
+}
+
+/*----------------------------------------------------*/
+.contactSection {
+  /* Positioning */
+  position: relative;
+
+  /* Box Model */
+  width: 100%;
+
+  /* Display */
+  color: #d4d4d4;
+  overflow: hidden;
+}
+
+#contactImage {
+  /* Display */
+  text-align: center;
+}
+
+#contactImage > img {
+  /* Box Model */
+  height: 18vmax;
+  width: auto;
+  object-fit: cover;
+}
+
+.contactSecTop {
+  /* Box Model */
+  padding: 5vw;
+
+  /* Display */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contactSecTop > div {
+  /* Box Model */
+  padding-top: 10px;
+  width: 30%;
+}
+.contactSecLinks > p {
+  /* Display */
+  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-size: clamp(1rem, 1vw, 100rem);
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.contactSecLinks > a {
+  /* Display */
+  font-family: "openSans", Arial, sans-serif;
+  font-size: clamp(1rem, 1vw, 100rem);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #d4d4d4;
+  padding: 5px;
+}
+.contactSecLinks > a:hover {
+  /* Display */
+  background-color: gray;
+}
+
+.MovingTextContainer {
+  /* Display */
+  display: flex;
+  align-items: center;
+}
+
+.MovingTextSingle {
+  /* Display */
+  position: relative;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.MovingTexttext {
+  /* Display */
+  font-size: clamp(5rem, 9vw, 100rem);
+  display: inline-block;
+  font-family: "Manrope", sans-serif;
+}
+
+.LinkToAboutMe {
+  /* Display */
+  font-family: "openSans", Arial, sans-serif;
+  padding-left: 5vw;
+  font-size: clamp(1rem, 1vw, 100rem);
+}
+
+.LinkToAboutMe > span {
+  /* Display */
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  #contactImage > img {
+    /* Box Model */
+    width: 100%;
+  }
+
+  .contactSecTop > div {
+    /* Box Model */
+    width: 100%;
+  }
 }

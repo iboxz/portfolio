@@ -1,3 +1,4 @@
+
 // analytics.google.com instructions ----------------------------------------
 
 window.dataLayer = window.dataLayer || [];
@@ -26,57 +27,6 @@ function CopyEmail() {
   const Copyemail = document.getElementById("Copyemail");
   Copyemail.textContent = "firstibox@outlook.com (copied)";
 }
-//device VRAM calculation, Changing the 3D Scene to video if the rendering power is low -----
-function checkVRAMAndWebGLSupport() {
-  var gl = document.createElement("canvas").getContext("webgl");
-  var maxVRAM = gl.getParameter(gl.MAX_TEXTURE_SIZE);
-
-  var webglSupport = gl ? true : false;
-
-  if (maxVRAM >= 1024 * 10 && webglSupport) {
-    function addSection() {
-      const mainSec = document.querySelector(".mainSec");
-
-      const splineViewer = document.createElement("spline-viewer");
-      splineViewer.setAttribute("class", "header3D");
-      splineViewer.setAttribute("spinner-big-dark", true);
-      splineViewer.setAttribute(
-        "url",
-        "https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"
-      );
-
-      mainSec.appendChild(splineViewer);
-    }
-
-    addSection();
-
-    window.onload = function () {
-      var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
-      shadowRoot.querySelector("#logo").remove();
-    };
-
-    console.log("WebGL & 2GB Vram true true");
-  } else {
-    function addSection() {
-      const mainSec = document.querySelector(".mainSec");
-      mainSec.innerHTML += `
-    <video class="headerVid" width="100%" height="100%" poster="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/hero-placeholder.webp?v=1700195303317" playsinline loop
-      autoplay muted>
-      Your browser does not support the video tag.
-      <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/mp4" />
-      <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/webm" />
-    </video>`;
-    }
-    addSection();
-
-    document.querySelector("#mainText").style.display = "flex";
-    document.querySelector("#mainText").style.opacity = 1;
-
-    console.log("WebGL & 2GB Vram true false");
-  }
-  console.log(maxVRAM, webglSupport);
-}
-checkVRAMAndWebGLSupport();
 
 // Mouse follow-up by hovered objects------------------------------------------------------
 

@@ -39,9 +39,7 @@
   <meta name="twitter:image" content="URL_TO_YOUR_IMAGE">
 
 
-  <link rel="stylesheet" href="PageHome/css/home.css" />
-  <link rel="stylesheet" href="PageHome/css/projects.css" />
-  <link rel="stylesheet" href="PageHome/css/contact.css" />
+  <link rel="stylesheet" href="PageHome/css/index.css" />
   <link rel="stylesheet" href="src/cursor.css">
 </head>
 
@@ -49,19 +47,10 @@
   <div id="cursor"></div>
   <div id="cursor-border"></div>
   <main>
+    <section class="loadingSection">
+      <p id="loadingCounter"></p>
+    </section>
     <section class="mainSec">
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.493/build/spline-viewer.js"></script>
-
-      <!-- <spline-viewer class="header3D" loading-anim
-        url="https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"></spline-viewer> -->
-
-
-      <!-- <video class="headerVid" width="100%" height="100%" poster="/images/hero-placeholder.webp" playsinline loop
-        autoplay muted>
-        Your browser does not support the video tag.
-        <source src="/images/home-hero.mp4" type="video/mp4" />
-        <source src="/images/home-hero.mp4" type="video/webm" />
-      </video> -->
 
       <div id="header" data-cursor="pointerBlendMode">
         <p id="headerAboutMe" class="cursor-tracking">
@@ -79,14 +68,10 @@
           <span id="is">is</span>
           <span id="ibox">ibox</span>
         </div>
+      </div>
+      <div id="sceneHolder"></div>
     </section>
     <section class="SecendSection">
-      <!-- <div class="cyclingCircles">
-        <div class="Circles">
-          <div class="Circles1"></div>
-          <div class="Circles2"></div>
-        </div>
-      </div> -->
       <div id="mainTextSec2" data-cursor="pointer3">
         <div id="mainTextSecWorld">
           <p id="TextHelloWorld">Hello, world!</p>
@@ -224,9 +209,7 @@
             alt="" draggable="false" />
         </div>
       </div>
-      <a href="">
-        <p class="LinkToAboutMe" data-cursor="pointerLine">Click to learn more <span>about me</span></p>
-      </a>
+      <p class="LinkToAboutMe" data-cursor="pointerLine">Click to learn more <span>about me</span></p>
       <div class="MovingTextContainer">
         <div class="MovingTextSingle">
           <span class="MovingTexttext js-text">Iliya Hadinezhad&#160;&#8231;&#160;</span>
@@ -237,6 +220,7 @@
         </div>
       </div>
     </div>
+
   </main>
   <div class="noise"></div>
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
@@ -245,6 +229,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R361QCJS7C"></script>
+
+
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.506/build/runtime.js"
+      }
+    }
+  </script>
+  <script type="module" src="PageHome/js/treeJsScene.js"></script>
 
   <script src="src/Favicon.js"></script>
   <script src="PageHome/js/home.js"></script>

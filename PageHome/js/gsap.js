@@ -1,11 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".header3D", {
+gsap.to("#sceneHolder", {
   scrollTrigger: {
-    trigger: ".header3D",
+    trigger: ".mainSec",
     start: "bottom top",
     end: "bottom center",
     toggleActions: "play none none reset",
+    markers: true,
   },
   display: "none",
   visibility: "hidden",
@@ -23,7 +24,7 @@ gsap.to("#mainText", {
 
 gsap.to(".mainSec", {
   scrollTrigger: {
-    trigger: "#mainText",
+    trigger: ".mainSec",
     start: "80% center",
     end: "bottom center",
     toggleActions: "play none none reverse",
