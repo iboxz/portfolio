@@ -1,12 +1,10 @@
 // analytics.google.com instructions ----------------------------------------
 
 window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-gtag("config", "G-G3MZ9D6KXL");
+gtag('config', 'G-R361QCJS7C');
 
 // Calculate my age automatically ----------------------------------------
 
