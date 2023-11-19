@@ -23,22 +23,21 @@
   <meta name="author" content="iliya hadinezhad">
 
   <!-- Open Graph Protocol for Social Media Sharing -->
-  <meta property="og:title" content="This is IBOX">
+  <meta property="og:title" content="This is IBOX - Iliya Hadinezhad">
   <meta property="og:description"
     content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad.">
-  <meta property="og:image"
-    content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg?v=1700190239944">
-  <meta property="og:url" content="https://firstibox.glitch.me/">
+  <meta property="og:image" content="URL_TO_YOUR_IMAGE">
+  <meta property="og:url" content="URL_TO_YOUR_WEBSITE">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="This is IBOX">
+  <meta name="twitter:title" content="This is IBOX - Iliya Hadinezhad">
   <meta name="twitter:description"
     content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad.">
-  <meta name="twitter:image"
-    content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg?v=1700190239944">
+  <meta name="twitter:image" content="URL_TO_YOUR_IMAGE">
+
 
   <link rel="stylesheet" href="PageHome/css/home.css" />
   <link rel="stylesheet" href="PageHome/css/projects.css" />
@@ -51,6 +50,18 @@
   <div id="cursor-border"></div>
   <main>
     <section class="mainSec">
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.493/build/spline-viewer.js"></script>
+
+      <!-- <spline-viewer class="header3D" loading-anim
+        url="https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"></spline-viewer> -->
+
+
+      <!-- <video class="headerVid" width="100%" height="100%" poster="/images/hero-placeholder.webp" playsinline loop
+        autoplay muted>
+        Your browser does not support the video tag.
+        <source src="/images/home-hero.mp4" type="video/mp4" />
+        <source src="/images/home-hero.mp4" type="video/webm" />
+      </video> -->
 
       <div id="header" data-cursor="pointerBlendMode">
         <p id="headerAboutMe" class="cursor-tracking">
@@ -237,12 +248,6 @@
 
   <script src="src/Favicon.js"></script>
   <script src="PageHome/js/home.js"></script>
-  <script type="module">
-    import { Application } from './src/3Dscene/runtime.js';
-    const canvas = document.getElementById('canvas3d');
-    const app = new Application(canvas);
-    app.load('./src/3Dscene/scene');
-  </script>
   <script src="src/cursor.js"></script>
   <script src="PageHome/js/changeableText.js"></script>
   <script src="PageHome/js/contact.js"></script>

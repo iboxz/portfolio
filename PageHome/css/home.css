@@ -36,9 +36,11 @@
   box-sizing: border-box;
   cursor: none;
 }
-body {
+body,
+html {
   background-color: black;
   transition: 1s ease;
+  scroll-behavior: smooth;
   width: 100%;
   /* overflow-x: hidden; */
 }

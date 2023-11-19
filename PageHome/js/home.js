@@ -1,4 +1,3 @@
-
 // analytics.google.com instructions ----------------------------------------
 
 window.dataLayer = window.dataLayer || [];
@@ -38,14 +37,24 @@ function checkVRAMAndWebGLSupport() {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
 
-      const AddCanvas = document.createElement("canvas");
-      AddCanvas.setAttribute("id", "canvas3d");
-      AddCanvas.setAttribute("class", "header3D");
+      const splineViewer = document.createElement("spline-viewer");
+      splineViewer.setAttribute("class", "header3D");
+      splineViewer.setAttribute("spinner-big-dark", true);
+      splineViewer.setAttribute(
+        "url",
+        "https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"
+      );
 
-      mainSec.appendChild(AddCanvas);
+      mainSec.appendChild(splineViewer);
     }
 
     addSection();
+
+    window.onload = function () {
+      var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
+      shadowRoot.querySelector("#logo").remove();
+    };
+
     console.log("WebGL & 2GB Vram true true");
   } else {
     function addSection() {
