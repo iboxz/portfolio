@@ -6,7 +6,6 @@ gsap.to("#sceneHolder", {
     start: "bottom top",
     end: "bottom center",
     toggleActions: "play none none reset",
-    markers: true,
   },
   display: "none",
   visibility: "hidden",
