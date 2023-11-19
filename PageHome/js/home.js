@@ -1,3 +1,13 @@
+// analytics.google.com instructions ----------------------------------------
+
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+
+gtag("config", "G-G3MZ9D6KXL");
+
 // Calculate my age automatically ----------------------------------------
 
 const birthDate = new Date("2005-02-01T01:10:05");
@@ -11,10 +21,10 @@ document.querySelector(
 
 // Copy the email in the contact section ----------------------------------
 function CopyEmail() {
-  navigator.clipboard.writeText("hadinezhad1383@gmail.com");
+  navigator.clipboard.writeText("firstibox@outlook.com");
 
   const Copyemail = document.getElementById("Copyemail");
-  Copyemail.textContent = "hadinezhad1383@gmail.com (copied)";
+  Copyemail.textContent = "firstibox@outlook.com (copied)";
 }
 //device VRAM calculation, Changing the 3D Scene to video if the rendering power is low -----
 function checkVRAMAndWebGLSupport() {
