@@ -77,7 +77,6 @@ a {
 .header3D {
   position: absolute;
   top: 0%;
-  width: 100%;
 
   background-color: #0e0e0e;
 
@@ -148,7 +147,7 @@ a {
 }
 #headerAboutMe:hover:before {
   content: "Do you want to know me better?";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerAboutMe::after {
@@ -183,7 +182,7 @@ a {
 }
 #headerBlog:hover::before {
   content: "Some interesting things, games and puzzles!";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerBlog::after {
@@ -218,7 +217,7 @@ a {
 }
 #headerContact:hover::before {
   content: "instagram, twitter, linkedin, telegram, etc.";
-  width: 240px;
+  width: 15vmax;
   height: fit-content;
 }
 #headerContact::after {
@@ -294,7 +293,7 @@ a {
   /* Box Model & Positioning */
   overflow: hidden;
   margin-top: -20vh;
-  border-radius: 2em;
+  border-radius: 2vmax;
   background-color: #eae0d4;
   position: relative;
   z-index: 10;
@@ -323,7 +322,7 @@ a {
 #mainTextSecWorld > p {
   /* Display */
   font-family: "openSans", Arial, sans-serif;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1.5rem, 2.5vw, 100rem);
   line-height: 0.9;
   text-transform: uppercase;
   white-space: nowrap;
@@ -343,7 +342,7 @@ a {
 #mainTextSecName > p {
   /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
-  font-size: clamp(5rem, 12vw, 20rem);
+  font-size: clamp(5rem, 12vw, 100rem);
   line-height: 0.8;
   text-transform: uppercase;
 }
@@ -356,7 +355,7 @@ a {
 #mainTextSecIM > p {
   /* Display */
   font-family: "Brinley", Arial, sans-serif;
-  font-size: clamp(1.5rem, 10vw, 2rem);
+  font-size: clamp(2rem, 2vw, 100rem);
   font-style: italic;
   white-space: nowrap;
   margin-top: 60px;
@@ -378,7 +377,8 @@ a {
 
 #IAmDivSec > div {
   /* Box Model */
-  height: 400px;
+  height: 25vmax;
+  min-height: 400px;
   width: 33%;
   padding: 3vw;
 
@@ -408,7 +408,7 @@ a {
 
 .IAmDivSecInside > p:nth-child(1) {
   /* Display */
-  font-size: clamp(0.5rem, 10vw, 1.5rem);
+  font-size: clamp(1.5rem, 1vw, 100rem);
   font-weight: 800;
   text-transform: uppercase;
   pointer-events: none;
@@ -417,14 +417,14 @@ a {
 .IAmDivSecInside > p:nth-child(2) {
   /* Display */
   color: #7c7c7c;
-  font-size: clamp(0.4rem, 10vw, 0.9rem);
+  font-size: clamp(1rem, 0.8vw, 100rem);
   text-transform: uppercase;
   pointer-events: none;
 }
 
 .IAmDivSecInside > div {
   /* Display */
-  font-size: clamp(0.3rem, 10vw, 0.8rem);
+  font-size: clamp(0.8rem, 0.8vw, 100rem);
   margin-top: auto;
   pointer-events: none;
 }
@@ -483,8 +483,9 @@ a {
 
 .programmerDiv:hover::before {
   /* Display */
-  content: "• HTML, CSS, JavaScript: 100% \a       - Tehran Technical Complex\a• Responsive Design: 100%\a       - Tehran Technical Complex\aUX/UI Design Principles: 80%\a       - Self taught\a• Android: 60%\a       - Allameh helli school\A• MongoDB & Node.js: 60%\a       - Discord bot developing";
+  content: "• HTML, CSS, JavaScript: 100% \a• Responsive Design: 100%\a• UX/UI Design Principles: 70%\a• Android: 50%\A• MongoDB & Node.js: 50%";
   white-space: pre-wrap;
+  font-size: clamp(0.8rem, 0.9vw, 100rem);
 
   /* Positioning */
   opacity: 1;
@@ -497,11 +498,12 @@ a {
   overflow: hidden;
   position: relative;
   z-index: 12;
+  height: 27vmax;
 
   /* Box Model */
   background-color: #ff2f2f;
-  border-radius: 15px;
-  margin: 10px 3vmin 0 3vmin;
+  border-radius: 1vmax;
+  margin: 2vmin 3vmin 0 3vmin;
 
   /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
@@ -520,7 +522,7 @@ a {
   color: #87180246;
   font-family: "openSans", Arial, sans-serif;
   font-weight: 600;
-  font-size: clamp(1rem, 5vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 100rem);
   line-height: 1.3;
   width: 120%;
   height: 90%;
@@ -544,8 +546,8 @@ a {
   position: relative;
 
   /* Display */
-  font-size: clamp(1rem, 5vw, 8rem);
-  padding-top: 50px;
+  font-size: clamp(1rem, 5vw, 100rem);
+  padding-top: 3vmax;
   padding-left: 5vw;
 }
 
@@ -554,7 +556,7 @@ a {
   position: relative;
 
   /* Display */
-  font-size: clamp(5rem, 15vw, 18rem);
+  font-size: clamp(5rem, 12vw, 100rem);
   padding-left: 5vw;
 }
 
@@ -581,6 +583,6 @@ a {
   display: inline-block;
 
   /* Display */
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3rem, 10vw, 100rem);
   text-transform: uppercase;
 }
