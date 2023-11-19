@@ -1,10 +1,13 @@
+
 // analytics.google.com instructions ----------------------------------------
 
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
 
-gtag('config', 'G-R361QCJS7C');
+gtag("config", "G-R361QCJS7C");
 
 // Calculate my age automatically ----------------------------------------
 
@@ -31,28 +34,18 @@ function checkVRAMAndWebGLSupport() {
 
   var webglSupport = gl ? true : false;
 
-  if (maxVRAM >= 1024 * 8 && webglSupport) {
+  if (maxVRAM >= 1024 * 10 && webglSupport) {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
 
-      const splineViewer = document.createElement("spline-viewer");
-      splineViewer.setAttribute("class", "header3D");
-      splineViewer.setAttribute("spinner-big-dark", true);
-      splineViewer.setAttribute(
-        "url",
-        "https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"
-      );
+      const AddCanvas = document.createElement("canvas");
+      AddCanvas.setAttribute("id", "canvas3d");
+      AddCanvas.setAttribute("class", "header3D");
 
-      mainSec.appendChild(splineViewer);
+      mainSec.appendChild(AddCanvas);
     }
 
     addSection();
-
-    window.onload = function () {
-      var shadowRoot = document.querySelector("spline-viewer").shadowRoot;
-      shadowRoot.querySelector("#logo").remove();
-    };
-
     console.log("WebGL & 2GB Vram true true");
   } else {
     function addSection() {

@@ -51,18 +51,6 @@
   <div id="cursor-border"></div>
   <main>
     <section class="mainSec">
-      <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.493/build/spline-viewer.js"></script>
-
-      <!-- <spline-viewer class="header3D" loading-anim
-        url="https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"></spline-viewer> -->
-
-
-      <!-- <video class="headerVid" width="100%" height="100%" poster="/images/hero-placeholder.webp" playsinline loop
-        autoplay muted>
-        Your browser does not support the video tag.
-        <source src="/images/home-hero.mp4" type="video/mp4" />
-        <source src="/images/home-hero.mp4" type="video/webm" />
-      </video> -->
 
       <div id="header" data-cursor="pointerBlendMode">
         <p id="headerAboutMe" class="cursor-tracking">
@@ -249,6 +237,12 @@
 
   <script src="src/Favicon.js"></script>
   <script src="PageHome/js/home.js"></script>
+  <script type="module">
+    import { Application } from './src/3Dscene/runtime.js';
+    const canvas = document.getElementById('canvas3d');
+    const app = new Application(canvas);
+    app.load('./src/3Dscene/scene');
+  </script>
   <script src="src/cursor.js"></script>
   <script src="PageHome/js/changeableText.js"></script>
   <script src="PageHome/js/contact.js"></script>
