@@ -374,7 +374,7 @@ a {
   overflow: hidden;
 }
 
-#mainTextSecName > p {
+#mainTextSecName > h1 {
   /* Display */
   font-family: "GTWalsheimPro", Arial, sans-serif;
   font-size: clamp(5rem, 12vw, 100rem);
