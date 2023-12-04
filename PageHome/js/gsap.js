@@ -43,7 +43,6 @@ function TextElement(element) {
     xPercent: "-10",
     yPercent: "30",
     duration: 1,
-    // filter: "blur(10px)",
   });
 }
 
@@ -94,7 +93,6 @@ gsap.from("#SecProjects", {
     trigger: "#SecProjects",
     start: "-90% bottom",
     toggleActions: "play none none none",
-    // markers: true,
   },
   y: "100%",
   filter: "blur(10px)",

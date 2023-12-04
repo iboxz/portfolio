@@ -1,30 +1,28 @@
 @font-face {
-  font-family: "Manrope";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Manrope.woff?v=1700238553223")
+  font-family: "damn";
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/damn.woff2")
     format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "openSans";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/openSans.woff2?v=1700238569976")
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/openSans.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Brinley";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Brinley.otf?v=1700238586761")
-    format("opentype");
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Brinley.woff2")
+    format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GTWalsheimPro";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff?v=1700238603306")
-    format("woff");
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff2?v=1700238601701")
+  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -67,7 +65,7 @@ a {
 /*----------------------------------------------------*/
 .loadingSection {
   /* Positioning */
-  position: absolute;
+  position: fixed;
   z-index: 990;
 
   /* Display */
@@ -85,13 +83,14 @@ a {
 .loadingSection > p {
   /* Positioning */
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
   left: 0;
 
   /* Display */
   color: #efe1d1;
   font-family: "GTWalsheimPro", Arial, sans-serif;
-  font-size: clamp(3rem, 5vw, 100rem);
+  font-size: clamp(3rem, 30vw, 100rem);
   font-style: italic;
   white-space: nowrap;
   text-transform: uppercase;
@@ -280,7 +279,7 @@ a {
 #mainText {
   color: #ffffff;
 
-  font-family: "Manrope", Arial, sans-serif;
+  font-family: "damn", Arial, sans-serif;
   font-weight: 900;
   font-size: clamp(8rem, 30vw, 18rem);
   letter-spacing: -2px;
@@ -817,7 +816,7 @@ a {
   /* Display */
   font-size: clamp(5rem, 9vw, 100rem);
   display: inline-block;
-  font-family: "Manrope", sans-serif;
+  font-family: "damn", sans-serif;
 }
 
 .LinkToAboutMe {

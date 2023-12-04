@@ -52,11 +52,11 @@ function checkVRAMAndWebGLSupport() {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
       mainSec.innerHTML += `
-  <video class="headerVid" width="100%" height="100%" poster="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/hero-placeholder.webp?v=1700195303317" playsinline loop
+  <video class="headerVid" width="100%" height="100%" poster="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/hero-placeholder.webp" playsinline loop
     autoplay muted>
     Your browser does not support the video tag.
-    <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/mp4" />
-    <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4?v=1700195308179" type="video/webm" />
+    <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4" type="video/mp4" />
+    <source src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4" type="video/webm" />
   </video>`;
     }
     addSection();
