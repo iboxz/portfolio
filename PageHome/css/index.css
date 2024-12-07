@@ -650,14 +650,20 @@ a {
     width: 100%;
   }
   #SecProjects div:nth-child(1) p {
-    bottom: 12vmin;
+    font-size: clamp(3rem, 14vmin, 100rem);
+    bottom: 7vmin;
+  }
+  #SecProjects div:nth-child(1) > div {
+    flex-direction: row;
   }
   #SecProjects div:nth-child(1) > div a {
-    background: rgba(255, 255, 255, 0.484);
-    color: black;
-    border-radius: 1vmin;
     width: 100%;
-    margin-top: 1vmin;
+    justify-content: center;
+    margin-right: 2vmin;
+    padding: 1vmin 3vmin;
+    border-radius: 0vmin;
+    background: hsla(0, 0%, 0%, 0.868);
+    color: rgb(255, 255, 255);
   }
 }
 
