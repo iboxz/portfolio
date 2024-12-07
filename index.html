@@ -1,248 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This is IBOX - Home</title>
+    <link rel="icon" type="image/png" href="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png" id="FacIcon" />
 
-  <title>This is IBOX - Home</title>
-  <link rel="icon" type="image/png" href="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png"
-    id="FacIcon" />
+    <meta name="title" content="This is IBOX - Home" />
+    <meta
+      name="description"
+      content="Explore IBOX official website (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. (ایلیا هادی نژاد)"
+    />
 
+    <meta name="keywords" content="ibox, firstibox, iliya, hadinezhad, ایلیا, هادی نژاد, portfolio, personal website" />
 
-  <meta name="title" content="This is IBOX - Home">
-  <meta name="description"
-    content="Explore IBOX official website (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. (ایلیا هادی نژاد)">
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="author" content="iliya hadinezhad" />
 
-  <meta name="keywords" content="ibox, firstibox, iliya, hadinezhad, ایلیا, هادی نژاد, portfolio, personal website">
+    <meta property="og:title" content="This is IBOX - Home - Iliya Hadinezhad" />
+    <meta
+      property="og:description"
+      content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad."
+    />
+    <meta property="og:image" content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png" />
+    <meta property="og:url" content="https://firstibox.glitch.me/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
 
-  <meta name="robots" content="index, follow">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="language" content="English">
-  <meta name="revisit-after" content="1 days">
-  <meta name="author" content="iliya hadinezhad">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="This is IBOX - Home" />
+    <meta
+      name="twitter:description"
+      content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad."
+    />
+    <meta name="twitter:image" content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png" />
+    <meta name="google-site-verification" content="aF1sEEeVPudM-vwxB0AzB_OQ3jexXs8j6GD6vdJK1hc" />
 
-  <!-- Open Graph Protocol for Social Media Sharing -->
-  <meta property="og:title" content="This is IBOX - Home - Iliya Hadinezhad">
-  <meta property="og:description"
-    content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad.">
-  <meta property="og:image" content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png">
-  <meta property="og:url" content="https://firstibox.glitch.me/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
+    <link rel="stylesheet" href="PageHome/css/index.css" />
+    <link rel="stylesheet" href="./src/cursor.css" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="This is IBOX - Home">
-  <meta name="twitter:description"
-    content="Explore the official website of IBOX (Iliya Hadinezhad) for a comprehensive overview, including his biography, contact details, blog, and more. Stay updated with the latest from Iliya Hadinezhad.">
-  <meta name="twitter:image" content="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png">
-  <meta name="google-site-verification" content="aF1sEEeVPudM-vwxB0AzB_OQ3jexXs8j6GD6vdJK1hc" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./src/ScrollSmoother.min.js"></script>
 
-  <link rel="stylesheet" href="PageHome/css/index.css" />
-  <link rel="stylesheet" href="src/cursor.css">
-</head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R361QCJS7C"></script>
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.506/build/runtime.js"
+        }
+      }
+    </script>
+    <script type="module" src="PageHome/js/treeJsScene.js"></script>
 
-<body>
-  <div id="cursor"></div>
-  <div id="cursor-border"></div>
-  <main>
-    <section class="loadingSection">
-      <p id="loadingCounter"></p>
-    </section>
-    <section class="mainSec">
+    <script defer src="./src/Favicon.js"></script>
+    <script defer src="./PageHome/js/home.js"></script>
+    <script defer src="./PageHome/js/gsap.js"></script>
+    <script defer src="./src/cursor.js"></script>
+  </head>
 
-      <div id="header" data-cursor="pointerBlendMode">
-        <p id="headerAboutMe" class="cursor-tracking">
-          <a href="aboutme.html">about me</a>
-        </p>
-        <p id="headerBlog" data-cursor="pointerBlendMode" class="cursor-tracking">
-          blog
-        </p>
-        <p id="headerContact" data-cursor="pointerBlendMode" class="cursor-tracking"><a href="#contact">contact</a></p>
-      </div>
-
-      <div id="mainTextOverflow">
-        <div id="mainText">
-          <span id="this">this</span>
-          <span id="is">is</span>
-          <span id="ibox">ibox</span>
-        </div>
-      </div>
-      <div id="sceneHolder"></div>
-    </section>
-    <section class="SecendSection">
-      <div id="mainTextSec2" data-cursor="pointer3">
-        <div id="mainTextSecWorld">
-          <p id="TextHelloWorld">Hello, world!</p>
-        </div>
-        <div id="mainTextSecName">
-          <h1 id="TextName">My name is Iliya</h1>
-        </div>
-        <div id="mainTextSecIM">
-          <p id="TextIM">I'm a</p>
-        </div>
-      </div>
-      <div id="IAmDivSec">
-        <div class="IAmDivSecInside designerDiv" data-cursor="pointerDisable">
-          <p>DIGITAL DESIGNER</p>
-          <p>Click to view</p>
-          <div>
-            <p>User Interface/User Experience DESIGN</p>
-            <p>VISUAL DESIGN</p>
-            <p>TYPOGRAPHY</p>
-            <p>Video Editing</p>
-            <p>Adobe Photoshop</p>
-            <p>FIGMA</p>
-            <p>Knowledge of Design Trends and Industry Standards</p>
-          </div>
-        </div>
-        <div class="IAmDivSecInside programmerDiv" data-cursor="pointerDisable">
-          <p>programmer</p>
-          <p>Click to view</p>
-          <div>
-            <p>HTML, CSS, JavaScript</p>
-            <p>Responsive Design</p>
-            <p>UX/UI Design Principles</p>
-            <p>Android</p>
-            <p>Performance Optimization</p>
-            <p>Testing and QA</p>
-            <p>MongoDB</p>
-            <p>Node.js</p>
-          </div>
-        </div>
-        <div class="IAmDivSecInside generalistDiv">
-          <p>generalist</p>
-          <div>
-            <p>Photography:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Camera Operation</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Photo Editing and Retouching</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Product Photography</p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;Post-Processing (Adobe Lightroom,
-              Photoshop, etc.)
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-border"></div>
+    <main id="smooth-wrapper">
+      <div id="smooth-content">
+        <section class="loadingSection">
+          <p id="loadingCounter"></p>
+        </section>
+        <section class="mainSec">
+          <div id="header" data-cursor="pointerBlendMode">
+            <p id="headerAboutMe" class="cursor-tracking">
+              <a href="aboutme.html">about me</a>
             </p>
-            <p>Blogging:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Content Writing and Editing</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Graphic Design for Blog Posts</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Research Skills</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Audience Engagement</p>
-            <p>Additional Skills:</p>
-            <p>
-              &nbsp;&nbsp;&nbsp;&nbsp;Public Speaking and Presentation Skills
-            </p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Community Management</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Podcasting and Audio Editing</p>
+            <p id="headerBlog" data-cursor="pointerBlendMode" class="cursor-tracking">blog</p>
+            <p id="headerContact" data-cursor="pointerBlendMode" class="cursor-tracking"><a href="#contact">contact</a></p>
           </div>
-        </div>
-      </div>
-      <div id="SecProjectsAnimation">
-        <div id="SecProjects">
-          <div id="SecProjectsText">
+
+          <div id="mainTextOverflow">
+            <div id="mainText">
+              <span id="this">this</span>
+              <span id="is">is</span>
+              <span id="ibox">ibox</span>
+            </div>
+          </div>
+          <div id="sceneHolder"></div>
+        </section>
+        <section class="SecendSection">
+          <div id="mainTextSec2" data-cursor="pointer3">
+            <div id="mainTextSecWorld">
+              <p id="TextHelloWorld">Hello, world!</p>
+            </div>
+            <div id="mainTextSecName">
+              <h1 id="TextName">My name is Iliya</h1>
+            </div>
+            <div id="mainTextSecIM">
+              <p id="TextIM">I'm a</p>
+            </div>
+          </div>
+          <div id="IAmDivSec">
+            <div class="IAmDivSecInside programmerDiv">
+              <p>programmer</p>
+              <p></p>
+              <div>
+                <p>Front-end Development</p>
+                <ul>
+                  <li>HTML5, CSS3, Sass, LESS, Bootstrap</li>
+                  <li>JavaScript (ES6+), React, jQuery, Three.js</li>
+                  <li>Responsive Design, Cross-Browser Compatibility, Accessibility</li>
+                </ul>
+                <p>UX/UI Design Principles</p>
+                <li>User Interface Design, User Experience Design, Figma</li>
+
+                <p>Back-end Development</p>
+                <li>Node.js, PHP</li>
+                <li>MySQL, MongoDB, Cloud Firestore</li>
+
+                <p>DevOps</p>
+                <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
+
+                <p>Mobile Web Development</p>
+                <li>Progressive Web Apps (PWA)</li>
+                <li>Android Web Apps</li>
+                <li>iOS Web Apps</li>
+
+                <p>Security</p>
+                <li>Web Security Best Practices</li>
+                <li>OWASP Guidelines</li>
+
+                <p>Version Control</p>
+                <li>Git, GitHub, GitLab</li>
+
+                <p>Web Accessibility</p>
+                <p>SEO Best Practices</p>
+                <p>Testing and QA, Performance Optimization</p>
+              </div>
+            </div>
+            <div class="IAmDivSecInside designerDiv" data-cursor="pointerDisable">
+              <p>DIGITAL DESIGNER</p>
+              <p id="viewText">Hold to view</p>
+              <div>
+                <p>User Interface/User Experience DESIGN</p>
+                <li>Wireframing, Prototyping, Usability Testing, Interaction Design</li>
+                <br />
+                <p>VISUAL DESIGN</p>
+                <li>Graphic Design, Illustration, Color Theory, Composition</li>
+                <br />
+
+                <p>TYPOGRAPHY</p>
+                <li>Font Design, Lettering</li>
+                <br />
+
+                <p>Editing apps</p>
+                <li>Adobe Photoshop, Adobe Premiere Pro, Adobe Illustrator, FIGMA</li>
+                <br />
+
+                <p>Knowledge of Design Trends and Industry Standards</p>
+                <li>Design Theory, Contemporary Art, User-Centered Design, Accessibility Standards</li>
+                <br />
+
+                <p>Photography Skills</p>
+                <li>Photo Editing, Adobe Lightroom, Composition Techniques</li>
+                <br />
+              </div>
+            </div>
+            <div class="IAmDivSecInside generalistDiv">
+              <p>generalist</p>
+              <p></p>
+              <div>
+                <p>Photography</p>
+                <li>
+                  Camera Operation, Photo Editing and Retouching, Post-Processing, Adobe Lightroom, Adobe Photoshop, Product Photography, Lighting
+                  Techniques, Color Correction, Image Enhancement
+                </li>
+                <p>Blogging</p>
+                <li>
+                  Content Writing and Editing, SEO Writing, Copywriting, Graphic Design for Blog Posts, Research Skills, Keyword Research,
+                  Fact-Checking, Audience Engagement, Social Media Management, Comment Moderation, Email Newsletters
+                </li>
+
+                <p>Collaboration</p>
+                <li>Communication, Teamwork, Agile Methodologies</li>
+
+                <p>Continuous Learning</p>
+                <li>Online Courses, Workshops and Seminars, Reading Industry Publications</li>
+
+                <p>Additional:</p>
+                <li>
+                  Public Speaking and Presentation Skills, Slide Design (PowerPoint, Keynote), Community Management, Podcasting and Audio Editing,
+                  Recording Techniques
+                </li>
+              </div>
+            </div>
+            <span id="productImg"><img src="./assets/Ai-generate2.jpg" alt="" /></span>
+          </div>
+          <div id="ContainerSecProjects">
             <p id="ProjectsText">projects</p>
+            <div id="SecProjects">
+              <div>
+                <img src="./assets/projects/strumix.jpg" draggable="false" alt="Strumix website" />
+                <p>استرامیکس</p>
+                <div>
+                  <a data-cursor="pointerLink" href="https://strumix.com/">strumix.com</a>
+                  <a data-cursor="pointerLink" href="https://strumix.com/blogs/">strumix.blogs</a>
+                </div>
+              </div>
+              <div>
+                <a href="https://free-v2ray-collector.glitch.me/" target="_blank">
+                  <img data-cursor="pointerLink" src="assets/projects/v2rayCollector.jpg" draggable="false" alt="free v2ray collector website" />
+                </a>
+              </div>
+              <div>
+                <a href="https://boxy.boxypanel.repl.co/" target="_blank">
+                  <img
+                    data-cursor="pointerLink"
+                    src="./assets/projects/BoxyBot.jpg"
+                    draggable="false"
+                    alt="boxy bot showcase website"
+                  />
+                </a>
+              </div>
+              <div>
+                <a href="#" target="_blank">
+                  <img
+                    src="./assets/projects/soon.jpg"
+                    draggable="false"
+                    alt="Soon"
+                  />
+                </a></div>
+            </div>
           </div>
-          <div id="ProjectsBoxy">
-            <a href="https://boxy.boxypanel.repl.co/" target="_blank">
-              <img data-cursor="pointerLink"
-                src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/projects-boxy.jpg" draggable="false"
-                alt="boxy bot showcase" />
-            </a>
-          </div>
-          <div id="ProjectsSoon">
-            <img src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/projects-boxy.jpg"
-              alt="boxy bot showcase" />
-            <p>soon</p>
-          </div>
-        </div>
-      </div>
-      <div id="SecLetsText" data-cursor="pointerWaveBorder">
-        <img id="RotateAsterisque" src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/star.svg"
-          alt="asterisque vector svg" />
-        <p id="letsText">project in mind?</p>
-        <p id="letsText">Let's</p>
-        <div id="changeableTextRelative">
-          <div id="changeableTextContainer">
-            <p id="changeableText1"></p>
-            <p id="changeableText2"></p>
-          </div>
-          <svg id="filters">
-            <defs>
-              <filter id="threshold">
-                <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+          <div id="SecLetsText" data-cursor="pointerWaveBorder">
+            <img id="RotateAsterisque" src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/star.svg" alt="asterisque vector svg" />
+            <p id="letsText">project in mind?</p>
+            <p id="letsText">Let's</p>
+            <div id="changeableTextRelative">
+              <div id="changeableTextContainer">
+                <p id="changeableText1"></p>
+                <p id="changeableText2"></p>
+              </div>
+              <svg id="filters">
+                <defs>
+                  <filter id="threshold">
+                    <feColorMatrix
+                      in="SourceGraphic"
+                      type="matrix"
+                      values="1 0 0 0 0
                           0 1 0 0 0
                           0 0 1 0 0
-                          0 0 0 255 -140" />
-              </filter>
-            </defs>
-          </svg>
+                          0 0 0 255 -140"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <div id="contact" class="contactSection">
+          <div class="contactSecTop">
+            <div class="contactSecLinks">
+              <p id="ContactTexts1">direct communication:</p>
+              <a data-cursor="pointerLine" id="Copyemail" onclick="CopyEmail()" href=" mailto:firstibox@outlook.com">firstibox@outlook.com</a>
+              <a id="ContactTexts4" data-cursor="pointerLine" target="_blank" href="https://t.me/IBOX_s">TELEGRAM</a>
+              <a id="ContactTexts5" data-cursor="pointerLine" target="_blank" href="https://discord.com/users/655082737220452352">DISCORD</a>
+              <a id="ContactTexts3" data-cursor="pointerLine" target="_blank" href="https://www.linkedin.com/in/iliyahadinezhad/">LINKEDIN</a>
+            </div>
+            <div class="contactSecLinks">
+              <p id="ContactTexts6">social media (non-work):</p>
+              <a id="ContactTexts8" data-cursor="pointerLine" target="_blank" href="https://x.com/FirstIBOX">TWITTER</a>
+              <a id="ContactTexts9" data-cursor="pointerLine" target="_blank" href="https://t.me/FirstIBOX">TELEGRAM CHANNEL</a>
+              <a id="ContactTexts10" data-cursor="pointerLine" target="_blank" href="https://discord.gg/alshain-748914550082109541">DISCORD SERVER</a>
+            </div>
+            <div id="contactImage" data-cursor="pointerWaveBorder">
+              <img
+                src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg"
+                alt="iliyahadinezhadImage"
+                draggable="false"
+              />
+            </div>
+          </div>
+          <p class="LinkToAboutMe" data-cursor="pointerLine">Click to learn more <a href="aboutme.html">about me</a></p>
+          <div class="MovingTextContainer">
+            <div class="MovingTextSingle">
+              <span class="MovingTexttext js-text">Iliya Hadinezhad&#160;&#8231;&#160;</span>
+              <span id="MyAge" class="MovingTexttext js-text">00YearsOld&#160;&#8231;&#160;</span>
+              <span class="MovingTexttext js-text">Iran/Tehran&#160;&#8231;&#160;</span>
+              <span class="MovingTexttext js-text">Freelancer&#160;&#8231;&#160;</span>
+              <span class="MovingTexttext js-text">Always Open&#160;&#8231;&#160;</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <div id="contact" class="contactSection">
-      <div class="contactSecTop">
-        <div class="contactSecLinks">
-          <p id="ContactTexts1">direct communication:</p>
-          <a data-cursor="pointerLine" id="Copyemail" onclick="CopyEmail()"
-            href=" mailto:firstibox@outlook.com">firstibox@outlook.com</a>
-          <a id="ContactTexts3" data-cursor="pointerLine" target="_blank"
-            href="https://www.linkedin.com/in/iliyahadinezhad/">LINKEDIN</a>
-          <a id="ContactTexts4" data-cursor="pointerLine" target="_blank" href="https://t.me/IBOX_s">TELEGRAM</a>
-          <a id="ContactTexts5" data-cursor="pointerLine" target="_blank"
-            href="https://discord.com/users/655082737220452352">DISCORD</a>
-        </div>
-        <div class="contactSecLinks">
-          <p id="ContactTexts6">social media (non-work):</p>
-          <a id="ContactTexts7" data-cursor="pointerLine" target="_blank"
-            href="https://instagram.com/firstibox">INSTAGRAM</a>
-          <a id="ContactTexts8" data-cursor="pointerLine" target="_blank" href="https://x.com/FirstIBOX">TWITTER</a>
-          <a id="ContactTexts9" data-cursor="pointerLine" target="_blank" href="https://t.me/FirstIBOX">TELEGRAM
-            CHANNEL</a>
-          <a id="ContactTexts10" data-cursor="pointerLine" target="_blank"
-            href="https://discord.gg/alshain-748914550082109541">DISCORD
-            SERVER</a>
-          <a id="ContactTexts11" data-cursor="pointerLine" target="_blank"
-            href="https://www.snapchat.com/add/thisisibox">SNAPCHAT</a>
-        </div>
-        <div id="contactImage" data-cursor="pointerWaveBorder">
-          <img src="https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/ContactImg-Smile.jpg"
-            alt="iliyahadinezhadImage" draggable="false" />
-        </div>
-      </div>
-      <p class="LinkToAboutMe" data-cursor="pointerLine">Click to learn more <a href="aboutme.html">about me</a></p>
-      <div class="MovingTextContainer">
-        <div class="MovingTextSingle">
-          <span class="MovingTexttext js-text">Iliya Hadinezhad&#160;&#8231;&#160;</span>
-          <span id="MyAge" class="MovingTexttext js-text">00YearsOld&#160;&#8231;&#160;</span>
-          <span class="MovingTexttext js-text">Iran/Tehran&#160;&#8231;&#160;</span>
-          <span class="MovingTexttext js-text">Freelancer&#160;&#8231;&#160;</span>
-          <span class="MovingTexttext js-text">Always Open&#160;&#8231;&#160;</span>
-        </div>
-      </div>
-    </div>
-
-  </main>
-  <div class="noise"></div>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R361QCJS7C"></script>
-  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-  <script type="importmap">
-    {
-      "imports": {
-        "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.506/build/runtime.js"
-      }
-    }
-  </script>
-  <script type="module" src="PageHome/js/treeJsScene.js"></script>
-
-  <script src="src/Favicon.js"></script>
-  <script src="PageHome/js/home.js"></script>
-  <script src="src/cursor.js"></script>
-  <script src="PageHome/js/changeableText.js"></script>
-  <script src="PageHome/js/gsap.js"></script>
-</body>
-
+    </main>
+    <div class="noise"></div>
+  </body>
 </html>

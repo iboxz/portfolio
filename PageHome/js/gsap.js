@@ -1,5 +1,13 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+let Smoother = null;
+Smoother = ScrollSmoother.create({
+  wrapper: "#smooth-wrapper",
+  content: "#smooth-content",
+  smooth: 0.8,
+  effects: true,
+  smoothTouch: false,
+});
 gsap.to("#sceneHolder", {
   scrollTrigger: {
     trigger: ".mainSec",
@@ -87,17 +95,6 @@ function animateElement(element) {
 animateElement("#TextHelloWorld");
 animateElement("#TextName");
 animateElement("#TextIM");
-
-gsap.from("#SecProjects", {
-  scrollTrigger: {
-    trigger: "#SecProjects",
-    start: "-90% bottom",
-    toggleActions: "play none none none",
-  },
-  y: "100%",
-  filter: "blur(10px)",
-  duration: 1.5,
-});
 
 function ContactElementAnimation(element) {
   gsap.from(element, {

@@ -23,9 +23,7 @@ function checkVRAMAndWebGLSupport() {
     const canvas = document.getElementById("canvas3d");
     const app = new Application(canvas);
 
-    const scene = app.load(
-      "https://prod.spline.design/pR4aKRID9cY5H6w0/scene.splinecode"
-    );
+    const scene = app.load("./src/scene.splinecode");
     // ---------------------------------------------loadingSection for 3D scene
     var counter = 0;
 
@@ -45,7 +43,7 @@ function checkVRAMAndWebGLSupport() {
         document.querySelector(".loadingSection").style.opacity = "0";
         document.body.style.overflow = "auto";
       }
-    }, 5000);
+    }, 0);
 
     console.log("WebGL & 2GB Vram true true");
   } else {

@@ -11,13 +11,9 @@ gtag("config", "G-R361QCJS7C");
 // Calculate my age automatically ----------------------------------------
 
 const birthDate = new Date("2005-02-01T01:10:05");
-const ageInYears = Math.floor(
-  (new Date() - birthDate) / (1000 * 60 * 60 * 24 * 365.25)
-);
+const ageInYears = Math.floor((new Date() - birthDate) / (1000 * 60 * 60 * 24 * 365.25));
 
-document.querySelector(
-  "#MyAge"
-).textContent = `${ageInYears} Years Old\u00A0\u2022\u00A0`;
+document.querySelector("#MyAge").textContent = `${ageInYears} Years Old\u00A0\u2022\u00A0`;
 
 // Copy the email in the contact section ----------------------------------
 function CopyEmail() {
@@ -29,25 +25,83 @@ function CopyEmail() {
 
 // Mouse follow-up by hovered objects------------------------------------------------------
 
-const classNames = [
-  "#headerAboutMe",
-  "#headerBlog",
-  "#headerContact",
-  ".designerDiv",
-  ".programmerDiv",
-];
+const productImg = document.getElementById("productImg");
+const windowWidth = window.innerWidth;
+const imgWidth = productImg.offsetWidth;
+const centerX = windowWidth / 2 - imgWidth / 3;
 
-classNames.forEach(className => {
-  const el = document.querySelector(className);
-  if (el)
-    el.addEventListener("mousemove", e => {
-      const { left, top } = el.getBoundingClientRect(),
-        { clientX: x, clientY: y } = e;
-      el.style.setProperty("--x", x - left + "px");
-      el.style.setProperty("--y", y - top + "px");
-    });
+gsap.set(productImg, {
+  xPercent: -50,
+  yPercent: -50,
+  transformOrigin: "center",
+  left: centerX + "px",
 });
 
+const followMouse = (e) => {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const distanceFromCenter = mouseX - centerX;
+
+  gsap.to(productImg, {
+    duration: 1,
+    ease: "power3",
+    x: distanceFromCenter * 0.3,
+  });
+  gsap.to(productImg, {
+    duration: 1,
+    ease: "power3",
+    y: mouseY / 1.5,
+  });
+
+  const clipPath = `polygon(
+${(mouseX / window.innerWidth) * 10}% 0%,
+${100 - (mouseY / window.innerHeight) * 10}% 0%,
+${100 - (mouseX / window.innerWidth) * 10}% 100%,
+${(mouseY / window.innerHeight) * 10}% 100%)`;
+
+  gsap.to(productImg, {
+    duration: 1,
+    ease: "power3",
+    clipPath: clipPath,
+  });
+};
+document.addEventListener("mousemove", followMouse);
+
+const section4 = document.querySelector("#IAmDivSec");
+const boxes = section4.querySelectorAll("div:nth-child(2)");
+const viewText = document.getElementById("viewText");
+
+const images = [
+  "./assets/Ai-generate2.jpg",
+  "./assets/Degital-art.jpg",
+  "./assets/Degital-art2.jpg",
+  "./assets/Poster-design.jpg",
+  "./assets/Poster-design2.jpg",
+  "./assets/Product-Photography.jpg",
+  "./assets/Product-Photography2.jpg",
+  "./assets/Ai-generate.jpg",
+];
+let currentImageIndex = 0;
+
+boxes.forEach((box) => {
+  box.addEventListener("mouseover", function () {
+    productImg.style.opacity = "1";
+    productImg.style.filter = "blur(0)";
+    viewText.textContent = "Click to view more";
+  });
+
+  box.addEventListener("mouseout", function () {
+    productImg.style.opacity = "0";
+    productImg.style.filter = "blur(5vmin)";
+    viewText.textContent = "Hold to view";
+  });
+
+  box.addEventListener("click", function () {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    document.querySelector("#productImg img").src = images[currentImageIndex];
+  });
+});
 //------------------------------Animated vertical text / contact section-----------------------
 let loops = gsap.utils.toArray(".MovingTextSingle").map((line, i) => {
   const links = line.querySelectorAll(".js-text");
@@ -65,8 +119,7 @@ let scrollDirection = 1;
 window.addEventListener("scroll", () => {
   let direction = window.pageYOffset > currentScroll ? 1 : -1;
   if (direction !== scrollDirection) {
-    console.log("change", direction);
-    loops.forEach(tl => {
+    loops.forEach((tl) => {
       gsap.to(tl, { timeScale: direction, overwrite: true });
     });
     scrollDirection = direction;
@@ -90,7 +143,7 @@ function horizontalLoop(items, config) {
     xPercents = [],
     curIndex = 0,
     pixelsPerSecond = (config.speed || 1) * 100,
-    snap = config.snap === false ? v => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+    snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
     totalWidth,
     curX,
     distanceToStart,
@@ -100,10 +153,7 @@ function horizontalLoop(items, config) {
   gsap.set(items, {
     xPercent: (i, el) => {
       let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
-      xPercents[i] = snap(
-        (parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 +
-          gsap.getProperty(el, "xPercent")
-      );
+      xPercents[i] = snap((parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 + gsap.getProperty(el, "xPercent"));
       return xPercents[i];
     },
   });
@@ -112,15 +162,13 @@ function horizontalLoop(items, config) {
     items[length - 1].offsetLeft +
     (xPercents[length - 1] / 100) * widths[length - 1] -
     startX +
-    items[length - 1].offsetWidth *
-      gsap.getProperty(items[length - 1], "scaleX") +
+    items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") +
     (parseFloat(config.paddingRight) || 0);
   for (i = 0; i < length; i++) {
     item = items[i];
     curX = (xPercents[i] / 100) * widths[i];
     distanceToStart = item.offsetLeft + curX - startX;
-    distanceToLoop =
-      distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+    distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
     tl.to(
       item,
       {
@@ -132,14 +180,11 @@ function horizontalLoop(items, config) {
       .fromTo(
         item,
         {
-          xPercent: snap(
-            ((curX - distanceToLoop + totalWidth) / widths[i]) * 100
-          ),
+          xPercent: snap(((curX - distanceToLoop + totalWidth) / widths[i]) * 100),
         },
         {
           xPercent: xPercents[i],
-          duration:
-            (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
+          duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
           immediateRender: false,
         },
         distanceToLoop / pixelsPerSecond
@@ -149,8 +194,7 @@ function horizontalLoop(items, config) {
   }
   function toIndex(index, vars) {
     vars = vars || {};
-    Math.abs(index - curIndex) > length / 2 &&
-      (index += index > curIndex ? -length : length);
+    Math.abs(index - curIndex) > length / 2 && (index += index > curIndex ? -length : length);
     let newIndex = gsap.utils.wrap(0, length, index),
       time = times[newIndex];
     if (time > tl.time() !== index > curIndex) {
@@ -161,8 +205,8 @@ function horizontalLoop(items, config) {
     vars.overwrite = true;
     return tl.tweenTo(time, vars);
   }
-  tl.next = vars => toIndex(curIndex + 1, vars);
-  tl.previous = vars => toIndex(curIndex - 1, vars);
+  tl.next = (vars) => toIndex(curIndex + 1, vars);
+  tl.previous = (vars) => toIndex(curIndex - 1, vars);
   tl.current = () => curIndex;
   tl.toIndex = (index, vars) => toIndex(index, vars);
   tl.times = times;
@@ -172,25 +216,6 @@ function horizontalLoop(items, config) {
   }
   return tl;
 }
-
-//Changing the images displayed in the DIGITAL DESIGNER section with each click--------
-const images = [
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER2.png",
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER3.png",
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER4.png",
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER5.png",
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER6.png",
-  "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/DIGITAL_DESIGNER.png",
-];
-
-let counter = 0;
-const designerDiv = document.querySelector(".designerDiv");
-
-designerDiv.addEventListener("click", () => {
-  const content = getComputedStyle(designerDiv, ":before").backgroundImage;
-  designerDiv.style.setProperty("--before-bg-image", `url(${images[counter]})`);
-  counter = (counter + 1) % images.length;
-});
 
 //----------------------------changeableText--------------------------------------------
 const elts = {
