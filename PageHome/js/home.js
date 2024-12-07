@@ -26,39 +26,45 @@ function CopyEmail() {
 // Mouse follow-up by hovered objects------------------------------------------------------
 
 const productImg = document.getElementById("productImg");
-const windowWidth = window.innerWidth;
-const imgWidth = productImg.offsetWidth;
-const centerX = windowWidth / 2 - imgWidth / 3;
 
 gsap.set(productImg, {
   xPercent: -50,
   yPercent: -50,
   transformOrigin: "center",
-  left: centerX + "px",
 });
 
 const followMouse = (e) => {
+  const windowWidth = window.innerWidth;
+  const imgWidth = productImg.offsetWidth;
+  const centerX = windowWidth / 2 - imgWidth / 3;
   const mouseX = e.clientX;
   const mouseY = e.clientY;
 
-  const distanceFromCenter = mouseX - centerX;
+  if (windowWidth < 992) {
+    gsap.to(productImg, {
+      duration: 0.1,
+      ease: "none",
+      x: mouseX,
+      y: mouseY,
+      xPercent: -100,
+      yPercent: 0,
+    });
+  } else {
+    const distanceFromCenter = mouseX - centerX;
 
-  gsap.to(productImg, {
-    duration: 1,
-    ease: "power3",
-    x: distanceFromCenter * 0.3,
-  });
-  gsap.to(productImg, {
-    duration: 1,
-    ease: "power3",
-    y: mouseY / 1.5,
-  });
+    gsap.to(productImg, {
+      duration: 1,
+      ease: "power3",
+      x: distanceFromCenter * 0.3,
+      y: mouseY / 1.5,
+    });
+  }
 
   const clipPath = `polygon(
-${(mouseX / window.innerWidth) * 10}% 0%,
-${100 - (mouseY / window.innerHeight) * 10}% 0%,
-${100 - (mouseX / window.innerWidth) * 10}% 100%,
-${(mouseY / window.innerHeight) * 10}% 100%)`;
+    ${(mouseX / window.innerWidth) * 10}% 0%,
+    ${100 - (mouseY / window.innerHeight) * 10}% 0%,
+    ${100 - (mouseX / window.innerWidth) * 10}% 100%,
+    ${(mouseY / window.innerHeight) * 10}% 100%)`;
 
   gsap.to(productImg, {
     duration: 1,
@@ -66,6 +72,7 @@ ${(mouseY / window.innerHeight) * 10}% 100%)`;
     clipPath: clipPath,
   });
 };
+
 document.addEventListener("mousemove", followMouse);
 
 const section4 = document.querySelector("#IAmDivSec");

@@ -525,6 +525,12 @@ a {
   height: 100%;
   object-fit: cover;
 }
+@media only screen and (max-width: 992px) {
+  #productImg {
+    height: 45vh;
+    width: 100%;
+  }
+}
 #viewText {
   user-select: none;
 }
