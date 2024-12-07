@@ -43,7 +43,7 @@ function checkVRAMAndWebGLSupport() {
         document.querySelector(".loadingSection").style.opacity = "0";
         document.body.style.overflow = "auto";
       }
-    }, 0);
+    }, 5000);
   } else {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
