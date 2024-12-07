@@ -564,6 +564,10 @@ a {
   grid-column: span 3 / span 3;
   position: relative;
   height: 40vh;
+  overflow: hidden;
+}
+#SecProjects div:nth-child(1) > a {
+  display: block;
 }
 #SecProjects div:nth-child(1) p {
   position: absolute;
@@ -573,12 +577,12 @@ a {
   font-family: rokh;
   font-weight: 800;
   font-size: clamp(3rem, 7vw, 100rem);
-  padding: 3vmin;
+  padding: 10vmin 3vmin 3vmin 25vmin;
   z-index: 99;
-  color: #ff9900;
+  color: rgb(255, 0, 102);
   mix-blend-mode: difference;
+  transition: color 0.02s linear ;
 }
-
 #SecProjects div:nth-child(1) > div {
   position: absolute;
   bottom: 0;

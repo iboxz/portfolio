@@ -315,3 +315,62 @@ function animate() {
 }
 
 animate();
+/* ---------------------------- */
+
+document.querySelector("#SecProjects div:nth-child(1)").addEventListener("click", function () {
+  window.open("https://strumix.com/", "_blank");
+});
+
+const targetElement = document.querySelector("#SecProjects div:nth-child(1) p");
+let hue = 0;
+const hueIncrement = 0.5;
+const interval = 50;
+let lastTime = Date.now();
+
+function updateColor() {
+  const currentTime = Date.now();
+  if (currentTime - lastTime >= interval) {
+    targetElement.style.color = `hsl(${hue}, 100%, 50%)`;
+    hue = (hue + hueIncrement) % 360;
+    lastTime = currentTime;
+  }
+  requestAnimationFrame(updateColor);
+}
+
+updateColor();
+
+var mWrap = document.querySelectorAll(".mouseSticky");
+
+function parallaxIt(e, wrap, movementPositive = 0.2, movementNegative = 0.8) {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var boundingRect = wrap.getBoundingClientRect();
+  var halfDiff = Math.abs(boundingRect.width - boundingRect.height) / 2;
+  var relX = e.pageX - boundingRect.left - halfDiff;
+  var relY = e.pageY - boundingRect.top;
+
+  // تعیین ضریب حرکت بر اساس جهت
+  var movementX = relX - boundingRect.width / 6 >= 0 ? movementPositive : movementNegative;
+
+  gsap.to(wrap, {
+    x: (relX - boundingRect.width / 6) * movementX,
+    y: (relY - boundingRect.height / 2 - scrollTop) * movementNegative, // در صورت نیاز می‌توانید ضریب حرکت y را نیز تنظیم کنید
+    ease: "power1",
+    duration: 0.6,
+  });
+}
+
+mWrap.forEach(function (wrap) {
+  wrap.addEventListener("mousemove", function (e) {
+    parallaxIt(e, wrap);
+  });
+
+  wrap.addEventListener("mouseleave", function (e) {
+    gsap.to(wrap, {
+      scale: 1,
+      x: 0,
+      y: 0,
+      ease: "power3",
+      duration: 1,
+    });
+  });
+});

@@ -43,9 +43,7 @@ function checkVRAMAndWebGLSupport() {
         document.querySelector(".loadingSection").style.opacity = "0";
         document.body.style.overflow = "auto";
       }
-    }, 5000);
-
-    console.log("WebGL & 2GB Vram true true");
+    }, 0);
   } else {
     function addSection() {
       const mainSec = document.querySelector(".mainSec");
@@ -80,9 +78,6 @@ function checkVRAMAndWebGLSupport() {
       document.querySelector(".loadingSection").style.opacity = "0";
       document.body.style.overflow = "auto";
     }, 3000);
-
-    console.log("WebGL & 2GB Vram true false");
   }
-  console.log(maxVRAM, webglSupport);
 }
 checkVRAMAndWebGLSupport();

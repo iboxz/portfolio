@@ -114,8 +114,6 @@ ContactElementAnimation("#ContactTexts3");
 ContactElementAnimation("#ContactTexts4");
 ContactElementAnimation("#ContactTexts5");
 ContactElementAnimation("#ContactTexts6");
-ContactElementAnimation("#ContactTexts7");
 ContactElementAnimation("#ContactTexts8");
 ContactElementAnimation("#ContactTexts9");
 ContactElementAnimation("#ContactTexts10");
-ContactElementAnimation("#ContactTexts11");
