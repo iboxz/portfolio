@@ -464,6 +464,9 @@ a {
     border-left: none;
     border-right: none;
   }
+  #IAmDivSec div {
+    padding: 5vmin 3vw;
+  }
 }
 
 .IAmDivSecInside > p:nth-child(1) {
@@ -531,7 +534,7 @@ a {
   /* Display */
   background-color: #0c0c0c;
   color: #efe1d1;
-  padding: 5vw;
+  padding: 5vmin;
 }
 
 #ProjectsText {
@@ -615,6 +618,9 @@ a {
   user-select: none;
 }
 @media only screen and (max-width: 800px) {
+  #ProjectsText {
+    padding: 10vmin 0 3vmin 0vmin;
+  }
   #SecProjects {
     display: grid;
     grid-template-columns: repeat(2, auto);
