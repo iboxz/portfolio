@@ -662,6 +662,7 @@ a {
   #SecProjects div:nth-child(1) p {
     font-size: clamp(3rem, 14vmin, 100rem);
     bottom: 7vmin;
+    pointer-events: none;
   }
   #SecProjects div:nth-child(1) > div {
     flex-direction: row;
