@@ -102,18 +102,22 @@ function ContactElementAnimation(element) {
       trigger: element,
       start: "center bottom",
       end: "center 80%",
-      scrub: 2,
+      scrub: 2
     },
-    x: "-150",
+    x: -150
   });
 }
 
-ContactElementAnimation("#ContactTexts1");
-ContactElementAnimation("#Copyemail");
-ContactElementAnimation("#ContactTexts3");
-ContactElementAnimation("#ContactTexts4");
-ContactElementAnimation("#ContactTexts5");
-ContactElementAnimation("#ContactTexts6");
-ContactElementAnimation("#ContactTexts8");
-ContactElementAnimation("#ContactTexts9");
-ContactElementAnimation("#ContactTexts10");
+const elements = [
+  "#ContactTexts1",
+  "#Copyemail",
+  "#ContactTexts3",
+  "#ContactTexts4",
+  "#ContactTexts5",
+  "#ContactTexts6",
+  "#ContactTexts8",
+  "#ContactTexts9",
+  "#ContactTexts10"
+];
+
+elements.forEach(ContactElementAnimation);

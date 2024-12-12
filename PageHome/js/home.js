@@ -317,8 +317,10 @@ function animate() {
 animate();
 /* ---------------------------- */
 
-document.querySelector("#SecProjects div:nth-child(1)").addEventListener("click", function () {
-  window.open("https://strumix.com/", "_blank");
+document.querySelector("#SecProjects div:nth-child(1)").addEventListener("click", function(event) {
+  if (event.target.tagName.toLowerCase() !== 'a') {
+    window.open("https://strumix.com/", "_blank");
+  }
 });
 
 const targetElement = document.querySelector("#SecProjects div:nth-child(1) p");
