@@ -54,6 +54,15 @@ function TextElement(element) {
   });
 }
 
+const projectsLink = document.getElementById("headerContact");
+projectsLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  Smoother.scrollTo("#contact", {
+    duration: 1.5,
+    ease: "power3.inOut",
+  });
+});
+
 TextElement("#changeableTextRelative");
 TextElement("#letsText");
 
@@ -102,9 +111,9 @@ function ContactElementAnimation(element) {
       trigger: element,
       start: "center bottom",
       end: "center 80%",
-      scrub: 2
+      scrub: 2,
     },
-    x: -150
+    x: -150,
   });
 }
 
@@ -117,7 +126,7 @@ const elements = [
   "#ContactTexts6",
   "#ContactTexts8",
   "#ContactTexts9",
-  "#ContactTexts10"
+  "#ContactTexts10",
 ];
 
 elements.forEach(ContactElementAnimation);

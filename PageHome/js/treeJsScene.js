@@ -2,14 +2,33 @@
 
 import { Application } from "@splinetool/runtime";
 
+const checkGraphicsCapability = () => {
+  try {
+    const canvas = document.createElement("canvas");
+    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    if (!gl) return false;
+
+    const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
+    const isShaderPrecisionValid = gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).precision > 0;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    const meetsRequirements = maxTextureSize >= 8192 && isShaderPrecisionValid && navigator.hardwareConcurrency >= 8 && !isMobile;
+
+    console.log(maxTextureSize, navigator.hardwareConcurrency);
+    return meetsRequirements;
+  } catch (error) {
+    return false;
+  }
+};
+
 function checkVRAMAndWebGLSupport() {
   var gl = document.createElement("canvas").getContext("webgl");
   var maxVRAM = gl.getParameter(gl.MAX_TEXTURE_SIZE);
   var webglSupport = !!gl;
 
-  if (maxVRAM >= 4096 && webglSupport) {
+  if (checkGraphicsCapability()) {
     // ----------- 3D Scene Handling -----------
-    console.log(maxVRAM)
+    console.log(maxVRAM);
     const mainSec = document.querySelector("#sceneHolder");
     const canvas3D = document.createElement("canvas");
     canvas3D.setAttribute("class", "header3D");
