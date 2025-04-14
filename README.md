@@ -104,7 +104,7 @@ This is official website of IBOX (Iliya Hadinezhad): Check to see the full conte
 
 - **[Free V2Ray Collector](https://free-v2ray-collector.glitch.me/)**
 
-- **[Boxy Bot](https://boxy.boxypanel.repl.co/)**
+- **[Boxy Bot](https://thisisboxy.glitch.me/)**
 
 - More projects are on the way!
 
