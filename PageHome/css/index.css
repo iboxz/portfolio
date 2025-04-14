@@ -167,6 +167,7 @@ a {
   padding: 5vw;
   position: relative;
   pointer-events: all;
+  text-align: center;
 }
 #headerAboutMe:before {
   content: "";
@@ -653,10 +654,8 @@ a {
   #SecProjects div:nth-child(4) {
     grid-row-start: 4;
   }
-  #SecProjects div:nth-child(4) img {
-    height: 10vh;
-    object-fit: cover;
-    object-position: 0 95%;
+  #SecProjects div:nth-child(4) {
+    display: none;
   }
   #SecProjects div:nth-child(1) > div {
     width: 100%;
