@@ -1,127 +1,125 @@
-// Device VRAM calculation, changing the 3D Scene to video if the rendering power is low
+const VIDEO_URLS = {
+  poster: "./assets/home-hero.jpg",
+  mp4: "./assets/home-hero.mp4",
+  webm: "./assets/home-hero.webm",
+};
 
-import { Application } from "@splinetool/runtime";
+const SELECTORS = {
+  sceneHolder: "#sceneHolder",
+  loadingSection: ".loadingSection",
+  loadingCounter: "#loadingCounter",
+  mainText: "#mainText",
+  canvas3d: "#canvas3d",
+};
 
-const checkGraphicsCapability = () => {
-  try {
-    const canvas = document.createElement("canvas");
-    const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    if (!gl) return false;
+const createVideoElement = () => {
+  const video = document.createElement("video");
+  video.className = "headerVid";
+  video.setAttribute("width", "100%");
+  video.setAttribute("height", "100%");
+  video.poster = VIDEO_URLS.poster;
+  video.autoplay = true;
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
 
-    const maxTextureSize = gl.getParameter(gl.MAX_TEXTURE_SIZE);
-    const isShaderPrecisionValid = gl.getShaderPrecisionFormat(gl.VERTEX_SHADER, gl.HIGH_FLOAT).precision > 0;
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  const mp4 = document.createElement("source");
+  mp4.src = VIDEO_URLS.mp4;
+  mp4.type = "video/mp4";
+  video.appendChild(mp4);
 
-    const meetsRequirements = maxTextureSize >= 8192 && isShaderPrecisionValid && navigator.hardwareConcurrency >= 8 && !isMobile;
+  const webm = document.createElement("source");
+  webm.src = VIDEO_URLS.webm;
+  webm.type = "video/webm";
+  video.appendChild(webm);
 
-    console.log(maxTextureSize, navigator.hardwareConcurrency);
-    return meetsRequirements;
-  } catch (error) {
-    return false;
+  return video;
+};
+
+const createLoadingCounter = (callback) => {
+  let counter = 0;
+  const counterEl = document.querySelector(SELECTORS.loadingCounter);
+
+  const update = () => {
+    if (counter < 100) {
+      counterEl.textContent = counter + "%";
+      counter++;
+      setTimeout(update, 50);
+    } else {
+      callback();
+    }
+  };
+  update();
+};
+
+const finishLoading = () => {
+  document.querySelector(SELECTORS.loadingCounter).textContent = "100%";
+  document.querySelector(SELECTORS.loadingSection).style.opacity = "0";
+  document.body.style.overflow = "auto";
+};
+
+const appendVideoToScene = (container, showText = false) => {
+  container.innerHTML = "";
+  const video = createVideoElement();
+  container.appendChild(video);
+
+  if (showText) {
+    const mainText = document.querySelector(SELECTORS.mainText);
+    mainText.style.display = "flex";
+    mainText.style.opacity = 1;
+  }
+
+  createLoadingCounter(finishLoading);
+
+  video.addEventListener("canplaythrough", finishLoading, { once: true });
+  video.addEventListener("error", () => {
+    console.error("Error loading the video.");
+    document.querySelector(SELECTORS.loadingCounter).textContent = "Load Error";
+  });
+};
+
+const initializeScene = () => {
+  if (window.canRender3D === false) {
+    appendVideoToScene(document.querySelector(SELECTORS.sceneHolder), true);
+    return;
+  }
+
+  if (window.canRender3D === true) {
+    try {
+      import("@splinetool/runtime")
+        .then(({ Application }) => {
+          const sceneHolder = document.querySelector(SELECTORS.sceneHolder);
+          const canvas3D = document.createElement("canvas");
+          canvas3D.className = "header3D";
+          canvas3D.id = "canvas3d";
+          sceneHolder.appendChild(canvas3D);
+
+          const app = new Application(canvas3D);
+
+          createLoadingCounter(() => {});
+
+          app
+            .load("../src/treeJs/scene.splinecode")
+            .then(() => finishLoading())
+            .catch((error) => {
+              console.error("Error loading 3D scene:", error);
+              document.querySelector(SELECTORS.loadingCounter).textContent = "Load Error";
+              setTimeout(() => appendVideoToScene(sceneHolder), 1000);
+            });
+        })
+        .catch((error) => {
+          console.error("Error importing Spline runtime:", error);
+          appendVideoToScene(document.querySelector(SELECTORS.sceneHolder), true);
+        });
+    } catch (error) {
+      console.error("Error initializing 3D scene:", error);
+      appendVideoToScene(document.querySelector(SELECTORS.sceneHolder), true);
+    }
   }
 };
 
-function checkVRAMAndWebGLSupport() {
-  var gl = document.createElement("canvas").getContext("webgl");
-  var maxVRAM = gl.getParameter(gl.MAX_TEXTURE_SIZE);
-  var webglSupport = !!gl;
-
-  if (checkGraphicsCapability()) {
-    // ----------- 3D Scene Handling -----------
-    console.log(maxVRAM);
-    const mainSec = document.querySelector("#sceneHolder");
-    const canvas3D = document.createElement("canvas");
-    canvas3D.setAttribute("class", "header3D");
-    canvas3D.setAttribute("id", "canvas3d");
-    mainSec.appendChild(canvas3D);
-
-    const canvas = document.getElementById("canvas3d");
-    const app = new Application(canvas);
-
-    let counter = 0;
-    function loadingCounter() {
-      const loadingCounterElement = document.querySelector("#loadingCounter");
-
-      if (counter < 100) {
-        loadingCounterElement.textContent = counter + "%";
-        counter++;
-        setTimeout(loadingCounter, 50);
-      }
-    }
-    loadingCounter();
-
-    app
-      .load("./src/scene.splinecode")
-      .then(() => {
-        counter = 100;
-        document.querySelector("#loadingCounter").textContent = "100%";
-
-        document.querySelector(".loadingSection").style.opacity = "0";
-        document.body.style.overflow = "auto";
-      })
-      .catch((error) => {
-        console.error("Error loading the 3D scene:", error);
-
-        document.querySelector("#loadingCounter").textContent = "Load Error";
-      });
-  } else {
-    // ----------- Video Handling -----------
-
-    const mainSec = document.querySelector(".mainSec");
-    const videoElement = document.createElement("video");
-    videoElement.className = "headerVid";
-    videoElement.setAttribute("width", "100%");
-    videoElement.setAttribute("height", "100%");
-    videoElement.poster = "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/hero-placeholder.webp";
-
-    videoElement.autoplay = true;
-    videoElement.muted = true;
-    videoElement.loop = true;
-    videoElement.playsInline = true;
-
-    const sourceMP4 = document.createElement("source");
-    sourceMP4.src = "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.mp4";
-    sourceMP4.type = "video/mp4";
-    const sourceWEBM = document.createElement("source");
-    sourceWEBM.src = "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/home-hero.webm";
-    sourceWEBM.type = "video/webm";
-
-    videoElement.appendChild(sourceMP4);
-    videoElement.appendChild(sourceWEBM);
-    mainSec.appendChild(videoElement);
-
-    document.querySelector("#mainText").style.display = "flex";
-    document.querySelector("#mainText").style.opacity = 1;
-
-    let counter = 0;
-    function loadingCounter() {
-      const loadingCounterElement = document.querySelector("#loadingCounter");
-
-      if (counter < 100) {
-        loadingCounterElement.textContent = counter + "%";
-        counter++;
-        setTimeout(loadingCounter, 50);
-      }
-    }
-    loadingCounter();
-
-    videoElement.addEventListener(
-      "canplaythrough",
-      () => {
-        counter = 100;
-        document.querySelector("#loadingCounter").textContent = "100%";
-
-        document.querySelector(".loadingSection").style.opacity = "0";
-        document.body.style.overflow = "auto";
-      },
-      { once: true }
-    );
-
-    videoElement.addEventListener("error", () => {
-      console.error("Error loading the video.");
-      document.querySelector("#loadingCounter").textContent = "Load Error";
-    });
-  }
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeScene);
+} else {
+  initializeScene();
 }
-
-checkVRAMAndWebGLSupport();

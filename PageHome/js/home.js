@@ -1,4 +1,3 @@
-// analytics.google.com instructions ----------------------------------------
 
 window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -8,22 +7,19 @@ gtag("js", new Date());
 
 gtag("config", "G-R361QCJS7C");
 
-// Calculate my age automatically ----------------------------------------
 
-const birthDate = new Date("2005-02-01T01:10:05");
+const birthDate = new Date("2005-03-01T01:10:05");
 const ageInYears = Math.floor((new Date() - birthDate) / (1000 * 60 * 60 * 24 * 365.25));
 
 document.querySelector("#MyAge").textContent = `${ageInYears} Years Old\u00A0\u2022\u00A0`;
 
-// Copy the email in the contact section ----------------------------------
 function CopyEmail() {
-  navigator.clipboard.writeText("firstibox@outlook.com");
+  navigator.clipboard.writeText("contact@firstibox.com");
 
   const Copyemail = document.getElementById("Copyemail");
-  Copyemail.textContent = "firstibox@outlook.com (copied)";
+  Copyemail.textContent = "contact@firstibox.com (copied)";
 }
 
-// Mouse follow-up by hovered objects------------------------------------------------------
 
 const productImg = document.getElementById("productImg");
 
@@ -109,7 +105,6 @@ boxes.forEach((box) => {
     document.querySelector("#productImg img").src = images[currentImageIndex];
   });
 });
-//------------------------------Animated vertical text / contact section-----------------------
 let loops = gsap.utils.toArray(".MovingTextSingle").map((line, i) => {
   const links = line.querySelectorAll(".js-text");
   return horizontalLoop(links, {
@@ -150,7 +145,7 @@ function horizontalLoop(items, config) {
     xPercents = [],
     curIndex = 0,
     pixelsPerSecond = (config.speed || 1) * 100,
-    snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
+    snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), 
     totalWidth,
     curX,
     distanceToStart,
@@ -224,7 +219,6 @@ function horizontalLoop(items, config) {
   return tl;
 }
 
-//----------------------------changeableText--------------------------------------------
 const elts = {
   text1: document.getElementById("changeableText1"),
   text2: document.getElementById("changeableText2"),
@@ -315,7 +309,6 @@ function animate() {
 }
 
 animate();
-/* ---------------------------- */
 
 document.querySelector("#SecProjects div:nth-child(1)").addEventListener("click", function(event) {
   if (event.target.tagName.toLowerCase() !== 'a') {
@@ -350,12 +343,11 @@ function parallaxIt(e, wrap, movementPositive = 0.2, movementNegative = 0.8) {
   var relX = e.pageX - boundingRect.left - halfDiff;
   var relY = e.pageY - boundingRect.top;
 
-  // تعیین ضریب حرکت بر اساس جهت
   var movementX = relX - boundingRect.width / 6 >= 0 ? movementPositive : movementNegative;
 
   gsap.to(wrap, {
     x: (relX - boundingRect.width / 6) * movementX,
-    y: (relY - boundingRect.height / 2 - scrollTop) * movementNegative, // در صورت نیاز می‌توانید ضریب حرکت y را نیز تنظیم کنید
+    y: (relY - boundingRect.height / 2 - scrollTop) * movementNegative, 
     ease: "power1",
     duration: 0.6,
   });

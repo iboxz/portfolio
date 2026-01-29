@@ -74,7 +74,7 @@ gsap.to("#RotateAsterisque", {
     scrub: 3,
   },
   // rotationZ: -360,
-  skewX: -70,
+  skewX: -40,
 });
 gsap.from(".IAmDivSecInside", {
   scrollTrigger: {

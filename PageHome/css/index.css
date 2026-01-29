@@ -1,45 +1,42 @@
 @font-face {
-  font-family: "damn";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/damn.woff2") format("woff");
+  font-family: damn;
+  src: url(../../assets/Damn.woff) format("woff");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "openSans";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/openSans.woff2") format("woff2");
-  font-weight: normal;
+  font-family: openSans;
+  src: url(../../assets/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Brinley";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/Brinley.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GTWalsheimPro";
-  src: url("https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/GTWalsheimPro-CondensedBlack.woff2") format("woff2");
-  font-weight: normal;
+  font-family: Brinley;
+  src: url(../../assets/Brinley.woff2) format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "rokh";
-  src: url("../../assets/Rokh-VF.ttf") format("truetype-variations");
-  font-weight: 100 900;
+  font-family: GTWalsheimPro;
+  src: url(../../assets/GTWalsheimProBold.ttf) format("truetype");
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
-
+@font-face {
+  font-family: rokh;
+  src: url(../../assets/Rokh-UltraBold.woff2) format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   cursor: none;
 }
 body,
 html {
-  background-color: black;
+  background-color: #000;
   transition: 1s ease;
   scroll-behavior: smooth;
   width: 100%;
@@ -48,14 +45,14 @@ body {
   overflow: hidden;
 }
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  text-decoration: inherit;
 }
-
 .noise {
-  background-image: url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/noise.gif?v=1700189459043);
-  background-size: 70px;
-  opacity: 0.15;
+  background-image: url(/assets/noise.gif);
+  background-size: 100px;
+  background-size: 20vmin;
+  opacity: 0.1;
   height: 110vh;
   width: 100vw;
   position: fixed;
@@ -63,103 +60,71 @@ a {
   left: 0;
   z-index: 9999;
   pointer-events: none;
+  mix-blend-mode: difference;
 }
-
-/*----------------------------------------------------*/
 .loadingSection {
-  /* Positioning */
   position: fixed;
   z-index: 990;
-
-  /* Display */
   width: 100%;
   height: 100vh;
   background-color: #0c0c0c;
-
   opacity: 1;
-
-  /* Transition */
   transition: all 0.2s linear;
-
   pointer-events: none;
 }
 .loadingSection > p {
-  /* Positioning */
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   left: 0;
-
-  /* Display */
   color: #efe1d1;
-  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-family: GTWalsheimPro, Arial, sans-serif;
   font-size: clamp(3rem, 30vw, 100rem);
   font-style: italic;
   white-space: nowrap;
   text-transform: uppercase;
 }
-
-/*----------------------------------------------------*/
 .mainSec {
   overflow: hidden;
   height: 120vh;
   width: 100%;
   position: relative;
 }
-/* @media only screen and (max-width: 768px) {
-  .mainSec {
-    height: 70vh;
-  }
-} */
-
 .header3D {
   position: absolute;
-  top: 0%;
-
+  top: 0;
   background-color: #0e0e0e;
-
   pointer-events: all;
-
-  /* opacity: 0.65; */
-  /* object-fit: cover; */
   z-index: 1;
 }
 .headerVid {
   position: absolute;
-  top: 0%;
+  top: 0;
   width: 100%;
   background-color: #0e0e0e;
-
   pointer-events: none;
-
   opacity: 0.65;
   object-fit: cover;
 }
-
 #header {
   top: 0;
-
-  color: rgb(255, 255, 255);
+  color: #fff;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: center;
   pointer-events: none;
-
   padding-top: 2vw;
   margin-bottom: 2vw;
   height: 12vh;
-
   text-transform: uppercase;
-  font-family: "openSans", Arial, sans-serif;
+  font-family: openSans, Arial, sans-serif;
   font-weight: 500;
-
   letter-spacing: 2px;
   line-height: 1.3;
   font-size: clamp(1rem, 1.5vw, 100rem);
-  color: white;
-
+  color: #fff;
   position: relative;
   z-index: 10;
 }
@@ -180,8 +145,7 @@ a {
   color: #0e0e0e;
   transform: translate(-50%, 30%);
   pointer-events: none;
-  transition: all 200ms ease-out;
-
+  transition: all 0.2s ease-out;
   margin-top: 3vh;
 }
 #headerAboutMe:hover:before {
@@ -191,14 +155,13 @@ a {
 }
 #headerAboutMe::after {
   content: "";
-
   position: absolute;
   bottom: 30%;
   left: 23%;
   height: 3px;
   width: 0;
   background-color: #e1f361;
-  transition: all 200ms ease-out;
+  transition: all 0.2s ease-out;
 }
 #headerAboutMe:hover::after {
   height: 3px;
@@ -215,8 +178,7 @@ a {
   color: #0e0e0e;
   transform: translate(-50%, 30%);
   pointer-events: none;
-  transition: all 200ms ease-out;
-
+  transition: all 0.2s ease-out;
   margin-top: 3vh;
 }
 #headerBlog:hover::before {
@@ -226,14 +188,13 @@ a {
 }
 #headerBlog::after {
   content: "";
-
   position: absolute;
   bottom: 30%;
   left: 30%;
   height: 3px;
   width: 0;
   background-color: #9bddf0;
-  transition: all 200ms ease-out;
+  transition: all 0.2s ease-out;
 }
 #headerBlog:hover::after {
   height: 3px;
@@ -250,8 +211,7 @@ a {
   color: #0e0e0e;
   transform: translate(-50%, 30%);
   pointer-events: none;
-  transition: all 200ms ease-out;
-
+  transition: all 0.2s ease-out;
   margin-top: 3vh;
 }
 #headerContact:hover::before {
@@ -261,14 +221,13 @@ a {
 }
 #headerContact::after {
   content: "";
-
   position: absolute;
   bottom: 30%;
   left: 23%;
   height: 3px;
   width: 0;
   background-color: #f24d2c;
-  transition: all 200ms ease-out;
+  transition: all 0.2s ease-out;
 }
 #headerContact:hover::after {
   height: 3px;
@@ -281,25 +240,20 @@ a {
   top: 15vh;
 }
 #mainText {
-  color: #ffffff;
-
-  font-family: "damn", Arial, sans-serif;
+  color: #fff;
+  font-family: damn, Arial, sans-serif;
   font-weight: 900;
-  font-size: clamp(8rem, 30vw, 18rem);
+  font-size: clamp(8rem, 35vmin, 100vmin);
   letter-spacing: -2px;
   text-transform: uppercase;
   white-space: nowrap;
-
   width: 100%;
   height: 100%;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   padding: 0 2vw;
-
   opacity: 1;
   position: relative;
   z-index: 10;
@@ -307,112 +261,75 @@ a {
 #mainText > span {
   padding: 0 1vw;
 }
-
 @media only screen and (min-width: 768px) {
   #mainText {
     display: none;
     opacity: 0;
-    /*     justify-content: left;
-    align-items: inherit;
-    flex-wrap: wrap;
-    font-size: 15vw; */
   }
-  /*   #ibox {
-    width: 100%;
-    font-size: 30vw;
-    margin-top: -10vh;
-  } */
 }
-/*----------------------------------------------------*/
 .SecendSection {
-  /* Box Model */
   width: 100%;
   padding-bottom: 20px;
-
-  /* Box Model & Positioning */
   overflow: hidden;
   margin-top: -20vh;
   border-radius: 2vmax;
   background-color: #eae0d4;
   position: relative;
   z-index: 10;
-
-  /* Box Shadow */
-  box-shadow: 0px -50px 50px 0px rgba(0, 0, 0, 0.8), 0px 5px 50px 0px rgba(86, 86, 86, 0.8);
+  box-shadow:
+    0 -50px 50px 0 rgba(0, 0, 0, 0.8),
+    0 5px 50px 0 rgba(86, 86, 86, 0.8);
 }
-
 #mainTextSec2 {
-  /* Box Model & Positioning */
   position: relative;
   z-index: 12;
   padding: 2vw;
-
-  /* Display */
   color: #ff2f2f;
 }
-
 #mainTextSecWorld {
-  /* Box Model */
   overflow: hidden;
   padding-top: 10vh;
 }
-
 #mainTextSecWorld > p {
-  /* Display */
-  font-family: "openSans", Arial, sans-serif;
+  font-family: openSans, Arial, sans-serif;
   font-size: clamp(1.5rem, 2.5vw, 100rem);
   line-height: 0.9;
   text-transform: uppercase;
   white-space: nowrap;
 }
-
 #mainTextIliya {
-  /* Box Model */
   display: flex;
   padding-left: 5vw;
 }
-
 #mainTextSecName {
-  /* Box Model */
   overflow: hidden;
 }
-
 #mainTextSecName > h1 {
-  /* Display */
-  font-family: "GTWalsheimPro", Arial, sans-serif;
-  font-size: clamp(5rem, 12vw, 100rem);
+  font-family: GTWalsheimPro, Arial, sans-serif;
+  font-size: clamp(5rem, 15vw, 100rem);
   line-height: 0.8;
   text-transform: uppercase;
+  margin-left: -1vw;
 }
-
 #mainTextSecIM {
-  /* Box Model */
   overflow: hidden;
 }
-
 #mainTextSecIM > p {
-  /* Display */
-  font-family: "Brinley", Arial, sans-serif;
+  font-family: Brinley, Arial, sans-serif;
   font-size: clamp(2rem, 2vw, 100rem);
   font-style: italic;
   white-space: nowrap;
   margin-top: 60px;
   padding-left: 1vw;
 }
-
-/*----------------------------------------------------*/
 #IAmDivSec {
-  /* Display */
   color: #401714;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
-  /* Positioning */
   position: relative;
   z-index: 13;
 }
-
 #IAmDivSec br {
   content: " ";
   display: block;
@@ -428,37 +345,27 @@ a {
   content: "╰";
   margin-right: 10px;
 }
-
 #IAmDivSec li > ul li::before {
   content: "╰";
   margin-right: 10px;
 }
 #IAmDivSec > div {
-  /* Box Model */
   height: auto;
   width: 33%;
   padding: 3vw;
-
-  /* Display */
-  border-top: #222222 1px solid;
-  border-bottom: #222222 1px solid;
-  font-family: "openSans", Arial, sans-serif;
+  border-top: #222 1px solid;
+  border-bottom: #222 1px solid;
+  font-family: openSans, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-
-  /* Positioning */
   position: relative;
 }
-
 #IAmDivSec > div:nth-child(2) {
-  /* Display */
-  border-right: #222222 1px solid;
-  border-left: #222222 1px solid;
+  border-right: #222 1px solid;
+  border-left: #222 1px solid;
 }
-
 @media only screen and (max-width: 992px) {
   #IAmDivSec > div {
-    /* Box Model */
     width: 100%;
   }
   #IAmDivSec > div:nth-child(2) {
@@ -469,44 +376,33 @@ a {
     padding: 5vmin 3vw;
   }
 }
-
 .IAmDivSecInside > p:nth-child(1) {
-  /* Display */
   font-size: clamp(1.5rem, 1vw, 100rem);
   font-weight: 800;
   text-transform: uppercase;
   pointer-events: none;
 }
-
 .IAmDivSecInside > p:nth-child(2) {
-  /* Display */
   color: #7c7c7c;
   font-size: clamp(1rem, 0.8vw, 100rem);
   text-transform: uppercase;
   pointer-events: none;
   margin-bottom: 3vmin;
 }
-
 .IAmDivSecInside > div {
-  /* Display */
   font-size: clamp(0.8rem, 0.8vw, 100rem);
   margin-top: auto;
   pointer-events: none;
 }
-
 .designerDiv:before {
-  /* Positioning */
   content: "";
   position: absolute;
   left: var(--x);
   top: var(--y);
   pointer-events: none;
   opacity: 0;
-
-  /* Display */
   transform: translate(-50%, -50%);
 }
-
 #productImg {
   position: absolute;
   top: 0;
@@ -516,7 +412,6 @@ a {
   height: 40vmin;
   pointer-events: none;
   z-index: 2;
-
   opacity: 0;
   background: #0c0c0c;
   transition: 0.3s ease-out;
@@ -535,18 +430,13 @@ a {
 #viewText {
   user-select: none;
 }
-/*----------------------------------------------------*/
-
 #ContainerSecProjects {
-  /* Display */
   background-color: #0c0c0c;
   color: #efe1d1;
   padding: 5vmin;
 }
-
 #ProjectsText {
-  /* Display */
-  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-family: GTWalsheimPro, Arial, sans-serif;
   font-size: clamp(1.5rem, 2vw, 100rem);
   font-style: italic;
   white-space: nowrap;
@@ -574,21 +464,20 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
-  color: black;
+  color: #000;
   font-family: rokh;
   font-weight: 800;
   font-size: clamp(3rem, 7vw, 100rem);
   padding: 10vmin 3vmin 3vmin 25vmin;
   z-index: 99;
-  color: rgb(255, 0, 102);
+  color: #f06;
   mix-blend-mode: difference;
-  transition: color 0.02s linear;
+  transition: color 20ms linear;
 }
 #SecProjects div:nth-child(1) > div {
   position: absolute;
   bottom: 0;
   left: 0;
-
   padding: 3vmin;
   display: flex;
   flex-direction: column;
@@ -596,8 +485,8 @@ a {
 #SecProjects div:nth-child(1) > div a {
   background: hsla(0, 0%, 0%, 0.7);
   backdrop-filter: blur(0.5vmin);
-  border: rgb(0, 0, 0) solid 0.2vmin;
-  font-family: "openSans", Arial, sans-serif;
+  border: #000 solid 0.2vmin;
+  font-family: openSans, Arial, sans-serif;
   font-size: clamp(0.8rem, 1vmin, 100rem);
   padding: 0.5vmin 1vmin;
   margin-top: 0.5vmin;
@@ -614,7 +503,6 @@ a {
 #SecProjects div:nth-child(3) {
   grid-row-start: 2;
 }
-
 #SecProjects div:nth-child(4) {
   grid-row-start: 2;
 }
@@ -622,35 +510,29 @@ a {
   width: 100%;
   height: 100%;
   border-radius: 1vmin;
-
-  /* Display */
   object-fit: cover;
   transition: 0.2s ease;
   user-select: none;
 }
 @media only screen and (max-width: 800px) {
   #ProjectsText {
-    padding: 10vmin 0 3vmin 0vmin;
+    padding: 10vmin 0 3vmin 0;
   }
   #SecProjects {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(4, auto);
   }
-
   #SecProjects div:nth-child(1) {
     grid-row-start: 1;
     height: 60vh;
   }
-
   #SecProjects div:nth-child(2) {
     grid-row-start: 2;
   }
-
   #SecProjects div:nth-child(3) {
     grid-row-start: 3;
   }
-
   #SecProjects div:nth-child(4) {
     grid-row-start: 4;
   }
@@ -673,41 +555,32 @@ a {
     justify-content: center;
     margin-right: 2vmin;
     padding: 1vmin 3vmin;
-    border-radius: 0vmin;
+    border-radius: 0;
     background: hsla(0, 0%, 0%, 0.868);
-    color: rgb(255, 255, 255);
+    color: #fff;
   }
 }
-
-/*----------------------------------------------------*/
 #SecLetsText {
-  /* Positioning */
   overflow: hidden;
   position: relative;
   z-index: 12;
   height: 27vmax;
-
-  /* Box Model */
   background-color: #ff2f2f;
   border-radius: 1vmax;
   margin: 2vmin 3vmin 0 3vmin;
-
-  /* Display */
-  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-family: GTWalsheimPro, Arial, sans-serif;
   color: #efe1d1;
   text-transform: uppercase;
   line-height: 0.8;
 }
-
 #SecLetsText::before {
-  /* Display */
   content: "Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation / Let's storytell! / Let's engage! / Let's technomagic! / Let's marvel! / Let's give it a try! / Let's experiment! / Let's go artificial! / Let's innovate! / Let's get serious! / Let's have fun! / Let's entertain! / Let's build art / Let's weave a story! / Let's inject some fun / Let's give it a go / Let's dive into experiments / Let's create experiences / Let's cultivate innovation";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #87180246;
-  font-family: "openSans", Arial, sans-serif;
+  font-family: openSans, Arial, sans-serif;
   font-weight: 600;
   font-size: clamp(1rem, 1.5vw, 100rem);
   line-height: 1.3;
@@ -715,116 +588,76 @@ a {
   height: 90%;
   z-index: -1;
 }
-
 #SecLetsText > img {
-  /* Positioning */
   position: absolute;
   right: 5%;
   top: 5%;
-  height: 30vmax;
+  height: 25vmax;
   z-index: -1;
-
-  /* Transition */
   transition: all 0.2s linear;
 }
-
 #SecLetsText > p:nth-child(2) {
-  /* Positioning */
   position: relative;
-
-  /* Display */
   font-size: clamp(1rem, 5vw, 100rem);
   padding-top: 3vmax;
   padding-left: 5vw;
 }
-
 #SecLetsText > p:nth-child(3) {
-  /* Positioning */
   position: relative;
-
-  /* Display */
   font-size: clamp(5rem, 12vw, 100rem);
   padding-left: 5vw;
 }
-
 #changeableTextRelative {
-  /* Positioning */
   position: relative;
   width: 100vw;
 }
-
 #changeableTextContainer {
-  /* Positioning */
   position: absolute;
   width: 80%;
   left: 10%;
   right: 10%;
   filter: url(#threshold);
 }
-
 #changeableText1,
 #changeableText2 {
-  /* Positioning */
   position: absolute;
   width: 100%;
   display: inline-block;
-
-  /* Display */
   font-size: clamp(3rem, 10vw, 100rem);
   text-transform: uppercase;
 }
-
-/*----------------------------------------------------*/
 .contactSection {
-  /* Positioning */
   position: relative;
-
-  /* Box Model */
   width: 100%;
-
-  /* Display */
   color: #d4d4d4;
   overflow: hidden;
 }
-
 #contactImage {
-  /* Display */
   text-align: center;
 }
-
 #contactImage > img {
-  /* Box Model */
   height: 18vmax;
   width: auto;
   object-fit: cover;
 }
-
 .contactSecTop {
-  /* Box Model */
   padding: 5vw;
-
-  /* Display */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
 .contactSecTop > div {
-  /* Box Model */
   padding-top: 10px;
   width: 30%;
 }
 .contactSecLinks > p {
-  /* Display */
-  font-family: "GTWalsheimPro", Arial, sans-serif;
+  font-family: GTWalsheimPro, Arial, sans-serif;
   font-size: clamp(1rem, 1vw, 100rem);
   text-transform: uppercase;
   padding-bottom: 15px;
 }
-
 .contactSecLinks > a {
-  /* Display */
-  font-family: "openSans", Arial, sans-serif;
+  font-family: openSans, Arial, sans-serif;
   font-size: clamp(1rem, 1vw, 100rem);
   display: flex;
   flex-direction: column;
@@ -833,50 +666,35 @@ a {
   padding: 5px;
 }
 .contactSecLinks > a:hover {
-  /* Display */
   background-color: gray;
 }
-
 .MovingTextContainer {
-  /* Display */
   display: flex;
   align-items: center;
 }
-
 .MovingTextSingle {
-  /* Display */
   position: relative;
   white-space: nowrap;
   will-change: transform;
 }
-
 .MovingTexttext {
-  /* Display */
   font-size: clamp(5rem, 9vw, 100rem);
   display: inline-block;
-  font-family: "damn", sans-serif;
+  font-family: damn, sans-serif;
 }
-
 .LinkToAboutMe {
-  /* Display */
-  font-family: "openSans", Arial, sans-serif;
+  font-family: openSans, Arial, sans-serif;
   padding-left: 5vw;
   font-size: clamp(1rem, 1vw, 100rem);
 }
-
 .LinkToAboutMe > a {
-  /* Display */
   text-decoration: underline;
 }
-
 @media only screen and (max-width: 768px) {
   #contactImage > img {
-    /* Box Model */
     width: 100%;
   }
-
   .contactSecTop > div {
-    /* Box Model */
     width: 100%;
   }
 }

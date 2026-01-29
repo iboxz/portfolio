@@ -1,31 +1,48 @@
 const faviconImages = [
-    "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye1.png?v=1700242730809",
-    "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye2.png?v=1700242729942",
-    "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye3.png?v=1700242729271",
-    "https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/eye4.png?v=1700242728579",
-  ];
-  let imageCounter = 0;
-  let intervalId;
-  
-  function updateFavicon() {
-    const currentFavicon = document.querySelector("link[rel='icon']");
-    if (currentFavicon !== null) {
-      currentFavicon.parentNode.removeChild(currentFavicon);
-    }
-  
-    const shortcutFavicon = document.querySelector("link[rel='shortcut icon']");
-    if (shortcutFavicon !== null) {
-      shortcutFavicon.parentNode.removeChild(shortcutFavicon);
-    }
-  
-    const newFavicon = document.createElement("link");
-    newFavicon.rel = "icon";
-    newFavicon.href = faviconImages[imageCounter];
-    newFavicon.type = "image/gif";
-    document.head.appendChild(newFavicon);
-  
-    imageCounter = (imageCounter + 1) % faviconImages.length;
+  "../assets/fav/BOXeye0.png",
+  "../assets/fav/BOXeye1.png",
+  "../assets/fav/BOXeye2.png",
+  "../assets/fav/BOXeye3.png",
+  "../assets/fav/BOXeye4.png",
+];
+
+let imageCounter = 0;
+let direction = 1;
+let faviconElement;
+let intervalId;
+
+function preloadImages() {
+  faviconImages.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+function initFavicon() {
+  faviconElement = document.querySelector("link[rel='icon']");
+
+  if (!faviconElement) {
+    faviconElement = document.createElement("link");
+    faviconElement.rel = "icon";
+    faviconElement.type = "image/png";
+    document.head.appendChild(faviconElement);
   }
-  
-  intervalId = setInterval(updateFavicon, 1000);
-  
+
+  faviconElement.href = faviconImages[0];
+}
+
+function updateFavicon() {
+  imageCounter += direction;
+
+  if (imageCounter >= faviconImages.length - 1) {
+    direction = -1;
+  } else if (imageCounter <= 0) {
+    direction = 1;
+  }
+
+  faviconElement.href = faviconImages[imageCounter];
+}
+
+preloadImages();
+initFavicon();
+intervalId = setInterval(updateFavicon, 300);

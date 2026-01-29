@@ -3,7 +3,7 @@ const cursorBorder = document.querySelector("#cursor-border");
 const cursorPos = { x: 0, y: 0 };
 const cursorBorderPos = { x: 0, y: 0 };
 
-document.addEventListener("mousemove", e => {
+document.addEventListener("mousemove", (e) => {
   cursorPos.x = e.clientX;
   cursorPos.y = e.clientY;
   cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
@@ -20,8 +20,8 @@ function loop() {
 
 requestAnimationFrame(loop);
 
-document.querySelectorAll("[data-cursor]").forEach(item => {
-  item.addEventListener("mouseover", e => {
+document.querySelectorAll("[data-cursor]").forEach((item) => {
+  item.addEventListener("mouseover", (e) => {
     switch (item.dataset.cursor) {
       case "pointer3":
         cursorBorder.style.display = "none";
@@ -41,8 +41,7 @@ document.querySelectorAll("[data-cursor]").forEach(item => {
         cursorBorder.style.display = "none";
 
         cursor.style.setProperty("--sizeMainCursor", "120px");
-        cursor.style.backgroundImage =
-          "url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/arrow-up-right-black.svg?v=1700189666557)";
+        cursor.style.backgroundImage = "url(./assets/arrow-up-right-black.svg)";
         cursor.style.backgroundRepeat = "no-repeat";
         cursor.style.backgroundSize = "40px 40px";
         cursor.style.backgroundPosition = "40px 40px";
@@ -52,28 +51,26 @@ document.querySelectorAll("[data-cursor]").forEach(item => {
         cursorBorder.style.display = "none";
 
         cursor.style.setProperty("--sizeMainCursor", "120px");
-        cursor.style.background =
-          "linear-gradient(120deg, #ffffff, #000000, #ffffff, #000000, #ffffff)";
-        cursor.style.animation =
-          "blobRadius 5s ease infinite, blobBackground 15s ease infinite";
+        cursor.style.background = "linear-gradient(120deg, #ffffff, #000000, #ffffff, #000000, #ffffff)";
+        cursor.style.animation = "blobRadius 5s ease infinite, blobBackground 15s ease infinite";
         cursor.style.backgroundSize = " 1600% 1600%";
         cursor.style.mixBlendMode = "difference";
 
         break;
       case "pointerLine":
         cursorBorder.style.animation = "blobRadius 5s ease infinite";
-        cursor.style.setProperty("--sizeMainCursor", "30px");
-        cursor.style.backgroundImage =
-          "url(https://cdn.glitch.global/8352fc0e-bebe-4680-ae0b-269da8b54259/arrow-up-right-white.svg?v=1700189665777)";
+        cursor.style.setProperty("--sizeMainCursor", "18px");
+        cursor.style.backgroundImage = "url(./assets/arrow-up-right-white.svg)";
         cursor.style.backgroundRepeat = "no-repeat";
-        cursor.style.backgroundSize = "30px 30px";
+        cursor.style.backgroundSize = "18px 18px";
         cursor.style.backgroundColor = "unset";
+        cursor.style.borderRadius = "0%";
 
         break;
     }
   });
 
-  item.addEventListener("mouseout", e => {
+  item.addEventListener("mouseout", (e) => {
     cursorBorder.style.boxShadow = "0 0 0 1px white";
 
     cursor.style.backgroundImage = "unset";
@@ -96,7 +93,7 @@ document.querySelectorAll("[data-cursor]").forEach(item => {
     cursorBorder.style.animation = "unset";
 
     cursor.style.backgroundColor = "white";
-    cursor.style.mixBlendMode = "unset";
+    cursor.style.mixBlendMode = "normal";
 
     cursor.style.width = "var(--sizeMainCursor)";
     cursor.style.borderRadius = "50%";
